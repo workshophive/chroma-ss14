@@ -19,6 +19,7 @@ using Robust.Shared.ContentPack;
 using Robust.Shared.Enums;
 using Robust.Shared.Prototypes;
 using Direction = Robust.Shared.Maths.Direction;
+using Content.Shared._Chroma.Traits;
 
 namespace Content.Client.Lobby.UI
 {
@@ -137,6 +138,8 @@ namespace Content.Client.Lobby.UI
             {
                 Save?.Invoke();
             };
+
+            Traits.OnTraitsChanged += OnTraitsSelectionChanged;
 
             #region Left
 
@@ -284,7 +287,7 @@ namespace Content.Client.Lobby.UI
 
             TabContainer.SetTabTitle(2, Loc.GetString("humanoid-profile-editor-antags-tab"));
 
-            RefreshTraits();
+//            RefreshTraits();
 
             #region Markings
 
@@ -387,11 +390,12 @@ namespace Content.Client.Lobby.UI
             UpdateSaveButton();
             UpdateMarkings();
 
+            UpdateTraitsSelection();
             RefreshAntags();
             RefreshJobs();
             RefreshLoadouts();
             RefreshSpecies();
-            RefreshTraits();
+//            RefreshTraits();
             RefreshFlavorText();
             ReloadPreview();
 

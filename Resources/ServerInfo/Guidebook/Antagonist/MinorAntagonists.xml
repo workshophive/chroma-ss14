@@ -30,9 +30,9 @@ They have no special abilities, but are identical in appearance, DNA, fingerprin
 
   <Box>
     <GuideEntityEmbed Entity="MobRatServant" Caption=""/>
-    <GuideEntityEmbed Entity="MobRatServant" Caption=""/>
+    <GuideEntityEmbed Entity="MobLargeRatServant" Caption=""/>
     <GuideEntityEmbed Entity="MobRatKing" Scale="2.4"/>
-    <GuideEntityEmbed Entity="MobRatServant" Caption=""/>
+    <GuideEntityEmbed Entity="MobLargeRatServant" Caption=""/>
     <GuideEntityEmbed Entity="MobRatServant" Caption=""/>
   </Box>
 

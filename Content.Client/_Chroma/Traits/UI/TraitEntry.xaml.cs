@@ -61,7 +61,7 @@ public sealed partial class TraitEntry : PanelContainer
     {
         MeetsConditions = true;
 
-        if (!_requirementsManager.CheckRequirementsForNonRole(_trait.Requirements, _playerManager.LocalSession, profile, out var reason))
+        if (!_requirementsManager.CheckRequirementsForNonRole(_trait.Requirements, profile, out var reason))
         {
             MeetsConditions = false;
             if (reason is not null)

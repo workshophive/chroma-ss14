@@ -182,6 +182,14 @@ public sealed partial class JobRequirementsManager : ISharedPlaytimeManager
         return true;
     }
 
+        /// <summary>
+    /// SL: Check against a requirements list without a role. Avoid using if there's a role, as this doesn't check bans.
+    /// </summary>
+    public bool CheckRequirementsForNonRole(HashSet<JobRequirement>? requirements, HumanoidCharacterProfile? profile, [NotNullWhen(false)] out FormattedMessage? reason)
+    {
+        return CheckRoleRequirements(requirements, profile, out reason);
+    }
+
     // This must be private so code paths can't accidentally skip requirement overrides. Call this through IsAllowed()
     private bool CheckRoleRequirements(HashSet<JobRequirement>? requirements, HumanoidCharacterProfile? profile, [NotNullWhen(false)] out FormattedMessage? reason)
     {

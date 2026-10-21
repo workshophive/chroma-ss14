@@ -31,7 +31,7 @@ public sealed partial class IonStormRule : StationEventSystem<IonStormRuleCompon
         var synthQuery = EntityQueryEnumerator<SynthComponent>();
         while (synthQuery.MoveNext(out var ent, out var synthComp))
         {
-            if (RobustRandom.Prob(synthComp.AlertChance))
+            if (System.Random(synthComp.AlertChance))
                 continue;
 
             if (!TryComp<ActorComponent>(ent, out var actor))

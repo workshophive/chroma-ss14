@@ -16,13 +16,9 @@ public sealed class SynthSystem : EntitySystem
 
     private void OnStartup(EntityUid uid, SynthComponent component, ComponentStartup args)
     {
-        if (TryComp<TypingIndicatorComponent>(uid, out var indicator))
-        {
-            indicator.Prototype = "robot";
-            Dirty(uid, indicator);
-        }
+        // Typing indicator change has been moved to traits yml for CD due to using a different traits system
 
         // Give them synth blood. Ion storm notif is handled in that system
-        _bloodstream.ChangeBloodReagents(uid, "SynthBlood");
+        _bloodstream.ChangeBloodReagent(uid, "SynthBlood");
     }
 }

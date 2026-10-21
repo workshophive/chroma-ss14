@@ -19,7 +19,7 @@ public sealed partial class TraitPreferenceSelector : Control
 
     public event Action<bool>? PreferenceChanged;
 
-    public TraitPreferenceSelector(TraitPrototype trait)
+/*    public TraitPreferenceSelector(TraitPrototype trait)
     {
         RobustXamlLoader.Load(this);
 
@@ -35,6 +35,7 @@ public sealed partial class TraitPreferenceSelector : Control
             Checkbox.ToolTip = Loc.GetString(desc);
         }
     }
+*/
 
     private void OnCheckBoxToggled(BaseButton.ButtonToggledEventArgs args)
     {

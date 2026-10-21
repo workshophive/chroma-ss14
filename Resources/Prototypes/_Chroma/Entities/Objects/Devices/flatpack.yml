@@ -1,0 +1,95 @@
+- type: entity
+  parent: BaseFlatpack
+  id: ScienceCommsComputerFlatpack
+  name: science communications computer flatpack
+  description: A flatpack used for constructing a science communications computer.
+  components:
+  - type: Flatpack
+    entity: ScienceComputerComms
+  - type: Sprite
+    layers:
+    - state: base
+    - state: overlay
+      color: "#d381c9"
+    - state: icon-default
+  - type: Appearance
+  
+- type: entity
+  parent: BaseFlatpack
+  id: SecurityCommsComputerFlatpack
+  name: security communications computer flatpack
+  description: A flatpack used for constructing a security communications computer.
+  components:
+  - type: Flatpack
+    entity: SecurityComputerComms
+  - type: Sprite
+    layers:
+    - state: base
+    - state: overlay
+      color: "#de3a3a"
+    - state: icon-default
+  - type: Appearance
+  
+- type: entity
+  parent: BaseFlatpack
+  id: ServiceCommsComputerFlatpack
+  name: service communications computer flatpack
+  description: A flatpack used for constructing a service communications computer.
+  components:
+  - type: Flatpack
+    entity: ServiceComputerComms
+  - type: Sprite
+    layers:
+    - state: base
+    - state: overlay
+      color: "#9fed58"
+    - state: icon-default
+  - type: Appearance
+  
+- type: entity
+  parent: BaseFlatpack
+  id: CargoCommsComputerFlatpack
+  name: cargo communications computer flatpack
+  description: A flatpack used for constructing a cargo communications computer.
+  components:
+  - type: Flatpack
+    entity: CargoComputerComms
+  - type: Sprite
+    layers:
+    - state: base
+    - state: overlay
+      color: "#a46106"
+    - state: icon-default
+  - type: Appearance
+  
+- type: entity
+  parent: BaseFlatpack
+  id: EngiCommsComputerFlatpack
+  name: engineering communications computer flatpack
+  description: A flatpack used for constructing an engineering communications computer.
+  components:
+  - type: Flatpack
+    entity: EngiComputerComms
+  - type: Sprite
+    layers:
+    - state: base
+    - state: overlay
+      color: "#efb341"
+    - state: icon-default
+  - type: Appearance
+  
+- type: entity
+  parent: BaseFlatpack
+  id: MedicalCommsComputerFlatpack
+  name: medical communications computer flatpack
+  description: A flatpack used for constructing a medical communications computer.
+  components:
+  - type: Flatpack
+    entity: MedicalComputerComms
+  - type: Sprite
+    layers:
+    - state: base
+    - state: overlay
+      color: "#52b4e9"
+    - state: icon-default
+  - type: Appearance

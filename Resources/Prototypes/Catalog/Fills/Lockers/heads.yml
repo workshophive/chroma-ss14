@@ -14,6 +14,7 @@
     - id: ClothingHandsKnuckleDustersQM
     - id: PlushieLizardJobQuartermaster
       prob: 0.02
+    - id: CargoCommsComputerFlatpack
 
 - type: entity
   id: LockerQuarterMasterFilled
@@ -136,6 +137,7 @@
     - id: ClothingEyesHudCommand
     - id: PlushieLizardJobHeadofpersonnel
       prob: 0.02
+    - id: ServiceCommsComputerFlatpack
 
 - type: entity
   id: LockerHeadOfPersonnelFilled
@@ -168,6 +170,7 @@
     - id: MetalFoamGrenade
     - id: PlushieLizardJobChiefengineer
       prob: 0.02
+    - id: EngiCommsComputerFlatpack
 
 # Hardsuit table, used for suit storage as well
 - type: entityTable
@@ -224,6 +227,7 @@
     - id: BoxCMOCircuitboards
     - id: PlushieLizardJobChiefmedicalofficer
       prob: 0.02
+    - id: MedicalCommsComputerFlatpack
 
 # Hardsuit table, used for suit storage as well
 - type: entityTable
@@ -275,6 +279,7 @@
     - id: RubberStampRd
     - id: PlushieLizardJobResearchdirector
       prob: 0.02
+    - id: ScienceCommsComputerFlatpack
 
 # Hardsuit table, used for suit storage as well
 - type: entityTable
@@ -336,6 +341,7 @@
     - id: DrinkHosFlask
     - id: PlushieLizardJobHeadofsecurity
       prob: 0.02
+    - SecurityCommsComputerFlatpack
 
 # Hardsuit table, used for suit storage as well
 - type: entityTable

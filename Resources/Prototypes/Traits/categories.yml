@@ -1,12 +1,26 @@
 - type: traitCategory
   id: Disabilities
   name: trait-category-disabilities
-
-- type: traitCategory
-  id: SpeechTraits
-  name: trait-category-speech
-  maxTraitPoints: 2
+  priority: 10
+  accentColor: "#64748b"
 
 - type: traitCategory
   id: Quirks
   name: trait-category-quirks
+  priority: 20
+  accentColor: "#a855f7" # Purple
+
+- type: traitCategory
+  id: SpeechTraits
+  name: trait-category-speech
+  priority: 30
+  maxTraits: 3
+  maxPoints: 2
+  accentColor: "#38bdf8" # Light blue
+
+- type: traitCategory
+  id: Species
+  name: trait-category-species
+  priority: 40
+  maxPoints: 3
+  accentColorL "#ffffff"

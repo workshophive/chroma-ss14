@@ -147,7 +147,7 @@ public sealed class TraitSystem : EntitySystem
                 continue;
 
             // Check requirements
-            if (!JobRequirements.TryRequirementsMet(trait.Requirements, session, null, out _, EntityManager, _prototype, profile))
+            if (!JobRequirements.TryRequirementsMet(trait.Requirements, null, out _, EntityManager, _prototype, profile))
             {
                 Log.Warning($"Trait {traitId} rejected: requirements not met");
                 continue;

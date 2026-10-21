@@ -2,8 +2,11 @@ using System.Linq;
 using Content.Client.Lobby.UI.Roles;
 using Content.Client.Stylesheets;
 using Content.Shared.Traits;
+using Robust.Shared.Prototypes;
+using Robust.Shared.Enums;
 using Robust.Client.UserInterface.Controls;
 using Robust.Shared.Utility;
+using Content.Shared._Chroma.Traits;
 
 namespace Content.Client.Lobby.UI;
 

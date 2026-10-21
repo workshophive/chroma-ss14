@@ -23,4 +23,4 @@
   name: trait-category-species
   priority: 40
   maxPoints: 3
-  accentColorL "#ffffff"
+  accentColor: "#ffffff"

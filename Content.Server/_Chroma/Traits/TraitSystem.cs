@@ -35,8 +35,8 @@ public sealed class TraitSystem : EntitySystem
 
         SubscribeLocalEvent<PlayerSpawnCompleteEvent>(OnPlayerSpawnComplete);
 
-        Subs.CVar(_config, CCVars.MaxTraitCount, value => _maxTraitCount = value, true);
-        Subs.CVar(_config, CCVars.MaxTraitPoints, value => _maxTraitPoints = value, true);
+        Subs.CVar(_config, ChromaCCVars.MaxTraitCount, value => _maxTraitCount = value, true);
+        Subs.CVar(_config, ChromaCCVars.MaxTraitPoints, value => _maxTraitPoints = value, true);
     }
 
     private void OnPlayerSpawnComplete(PlayerSpawnCompleteEvent args)

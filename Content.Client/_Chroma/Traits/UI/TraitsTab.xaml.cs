@@ -41,8 +41,8 @@ public sealed partial class TraitsTab : BoxContainer
         _prototype.PrototypesReloaded += OnProtoReload;
 
         // Subscribe to CVars
-        _cfg.OnValueChanged(CCVars.MaxTraitCount, OnMaxTraitCountChanged, true);
-        _cfg.OnValueChanged(CCVars.MaxTraitPoints, OnMaxTraitPointsChanged, true);
+        _cfg.OnValueChanged(ChromaCCVars.MaxTraitCount, OnMaxTraitCountChanged, true);
+        _cfg.OnValueChanged(ChromaCCVars.MaxTraitPoints, OnMaxTraitPointsChanged, true);
 
         PopulateCategories();
         UpdateGlobalStats();

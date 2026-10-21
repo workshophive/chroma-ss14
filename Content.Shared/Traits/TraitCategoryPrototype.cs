@@ -1,4 +1,4 @@
-using Robust.Shared.Prototypes;
+/* using Robust.Shared.Prototypes;
 
 namespace Content.Shared.Traits;
 
@@ -26,3 +26,4 @@ public sealed partial class TraitCategoryPrototype : IPrototype
     [DataField]
     public int? MaxTraitPoints;
 }
+*/

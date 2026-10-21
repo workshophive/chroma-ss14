@@ -1,4 +1,5 @@
 using System.Numerics;
+using Content.Shared._Chroma.Traits;
 using Content.Shared.Chat.Prototypes;
 using Content.Shared.Humanoid.Markings;
 using Content.Shared.Humanoid.Prototypes;

@@ -75,10 +75,10 @@
       Appendix: OrganHumanAppendix
       Ears: OrganHumanEars
       Lungs: OrganHumanLungs
-      Heart: OrganHumanHeart
-      Stomach: OrganHumanStomach
-      Liver: OrganHumanLiver
-      Kidneys: OrganHumanKidneys
+      Heart: OrganFelikinHeart
+      Stomach: OrganFelikinStomach
+      Liver: OrganFelikinLiver
+      Kidneys: OrganFelikinKidneys
   - type: HumanoidProfile
     species: Felikin
     
@@ -101,6 +101,8 @@
         - MobMask
         layer:
         - MobLayer
+  - type: Damageable
+    damageModifierSet: Felikin
   - type: Speech
     speechVerb: Wawa
     speechSounds: Cat
@@ -174,3 +176,33 @@
 - type: entity
   parent: [ OrganBaseFootRight, OrganFelikinExternal ]
   id: OrganFelikinFootRight
+  
+- type: entity
+  id: OrganFelikinMetabolizer
+  abstract: true
+  components:
+  - type: Metabolizer
+    metabolizerTypes: [Felikin]
+    
+- type: entity
+  parent: [OrganHumanStomach, OrganFelikinMetabolizer]
+  id: OrganFelikinStomach
+  components:
+  - type: Stomach
+    specialDigestible:
+      tags:
+      - Meat
+      - ReptilianFood
+      - Pill
+
+- type: entity
+  parent: [ OrganHumanLiver, OrganFelikinMetabolizer ]
+  id: OrganFelikinLiver
+
+- type: entity
+  parent: [ OrganHumanKidneys, OrganFelikinMetabolizer ]
+  id: OrganFelikinKidneys
+
+- type: entity
+  parent: [ OrganHumanHeart, OrganFelikinMetabolizer ]
+  id: OrganFelikinHeart

@@ -1,0 +1,16 @@
+# Inbetween reptilian and human. Tougher skin + scales
+- type: damageModifierSet
+  id: Dragonborn
+  coefficients:
+    Blunt: 0.8
+    Piercing: 0.8
+    Cold: 1.1
+
+# Small and fragile, but can tank poison
+- type: damageModifierSet
+  id: Felikin
+  coefficients:
+    Poison: 0.35
+    Blunt: 1.2
+    Piercing: 1.2
+    Slash: 1.2

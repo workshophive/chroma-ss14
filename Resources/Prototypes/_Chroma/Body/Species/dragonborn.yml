@@ -26,28 +26,36 @@
       required: false
     enum.HumanoidVisualLayers.LArm:
       limit: 2
-      required: false
+      required: true
+      default: [DBScalesLArm]
     enum.HumanoidVisualLayers.RArm:
       limit: 2
-      required: false
+      required: true
+      default: [DBScalesRArm]
     enum.HumanoidVisualLayers.LHand:
       limit: 2
-      required: false
+      required: true
+      default: [DBScalesLHand]
     enum.HumanoidVisualLayers.RHand:
       limit: 2
-      required: false
+      required: true
+      default: [DBScalesRHand]
     enum.HumanoidVisualLayers.LLeg:
       limit: 2
-      required: false
+      required: true
+      default: [DBScalesLLeg]
     enum.HumanoidVisualLayers.RLeg:
       limit: 2
-      required: false
+      required: true
+      default: [DBScalesRLeg]
     enum.HumanoidVisualLayers.LFoot:
       limit: 2
-      required: false
+      required: true
+      default: [DBScalesLFoot]
     enum.HumanoidVisualLayers.RFoot:
       limit: 2
-      required: false
+      required: true
+      default: [DBScalesRFoot]
 
 - type: entity
   parent: AppearanceHuman
@@ -95,6 +103,8 @@
     emoteSounds: MaleReptilian
   - type: BodyEmotes
     soundsId: ReptilianBodyEmotes
+  - type: Damageable
+    damageModifierSet: Dragonborn
   - type: MeleeWeapon
     soundHit:
       collection: AlienClaw

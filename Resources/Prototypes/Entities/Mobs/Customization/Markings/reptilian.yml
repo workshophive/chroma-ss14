@@ -9,7 +9,7 @@
 - type: marking
   id: LizardFrillsShort
   bodyPart: HeadSide
-  groupWhitelist: [Reptilian]
+  groupWhitelist: [Reptilian, Dragonborn]
   sprites:
   - sprite: Mobs/Customization/reptilian_parts.rsi
     state: frills_short
@@ -17,7 +17,7 @@
 - type: marking
   id: LizardFrillsSimple
   bodyPart: HeadSide
-  groupWhitelist: [Reptilian]
+  groupWhitelist: [Reptilian, Dragonborn]
   sprites:
   - sprite: Mobs/Customization/reptilian_parts.rsi
     state: frills_simple
@@ -33,7 +33,7 @@
 - type: marking
   id: LizardFrillsBig
   bodyPart: HeadSide
-  groupWhitelist: [Reptilian]
+  groupWhitelist: [Reptilian, Dragonborn]
   sprites:
   - sprite: Mobs/Customization/reptilian_parts.rsi
     state: frills_big
@@ -91,7 +91,7 @@
 - type: marking
   id: LizardHornsShort
   bodyPart: HeadTop
-  groupWhitelist: [Reptilian]
+  groupWhitelist: [Reptilian, Dragonborn]
   sprites:
   - sprite: Mobs/Customization/reptilian_parts.rsi
     state: horns_short
@@ -99,7 +99,7 @@
 - type: marking
   id: LizardHornsSimple
   bodyPart: HeadTop
-  groupWhitelist: [Reptilian]
+  groupWhitelist: [Reptilian, Dragonborn]
   sprites:
   - sprite: Mobs/Customization/reptilian_parts.rsi
     state: horns_simple
@@ -115,7 +115,7 @@
 - type: marking
   id: LizardTailSmooth
   bodyPart: Tail
-  groupWhitelist: [Reptilian]
+  groupWhitelist: [Reptilian, Dragonborn]
   sprites:
   - sprite: Mobs/Customization/reptilian_parts.rsi
     state: tail_smooth_primary
@@ -125,7 +125,7 @@
 - type: marking
   id: LizardTailLarge
   bodyPart: Tail
-  groupWhitelist: [Reptilian]
+  groupWhitelist: [Reptilian, Dragonborn]
   sprites:
   - sprite: Mobs/Customization/reptilian_parts.rsi
     state: tail_large
@@ -133,7 +133,7 @@
 - type: marking
   id: LizardTailSpikes
   bodyPart: Tail
-  groupWhitelist: [Reptilian]
+  groupWhitelist: [Reptilian, Dragonborn]
   sprites:
   - sprite: Mobs/Customization/reptilian_parts.rsi
     state: tail_spikes
@@ -141,7 +141,7 @@
 - type: marking
   id: LizardTailLTiger
   bodyPart: Tail
-  groupWhitelist: [Reptilian]
+  groupWhitelist: [Reptilian, Dragonborn]
   sprites:
   - sprite: Mobs/Customization/reptilian_parts.rsi
     state: tail_ltiger
@@ -149,7 +149,7 @@
 - type: marking
   id: LizardTailDTiger
   bodyPart: Tail
-  groupWhitelist: [Reptilian]
+  groupWhitelist: [Reptilian, Dragonborn]
   sprites:
   - sprite: Mobs/Customization/reptilian_parts.rsi
     state: tail_dtiger

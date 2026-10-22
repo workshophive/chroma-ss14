@@ -33,6 +33,7 @@
   roundStart: true
   prototype: MobFelikin
   dollPrototype: AppearanceFelikin
+  skinColoration: HumanToned
   subspeciesOf: Human
   subspeciesName: subspecies-name-felikin
   defaultSoundsBySex:
@@ -47,6 +48,7 @@
   roundStart: true
   prototype: MobDragonborn
   dollPrototype: AppearanceDragonborn
+  skinColoration: HumanToned
   subspeciesOf: Human
   subspeciesName: subspecies-name-dragonborn
   defaultSoundsBySex:

@@ -1,7 +1,6 @@
 - type: markingsGroup
   parent: Undergarments
   id: Dragonborn
-  onlyGroupWhitelisted: true
   limits:
     enum.HumanoidVisualLayers.Hair:
       limit: 1
@@ -26,28 +25,28 @@
       limit: 1
       required: false
     enum.HumanoidVisualLayers.LArm:
-      limit: 1
+      limit: 2
       required: false
     enum.HumanoidVisualLayers.RArm:
-      limit: 1
+      limit: 2
       required: false
     enum.HumanoidVisualLayers.LHand:
-      limit: 1
+      limit: 2
       required: false
     enum.HumanoidVisualLayers.RHand:
-      limit: 1
+      limit: 2
       required: false
     enum.HumanoidVisualLayers.LLeg:
-      limit: 1
+      limit: 2
       required: false
     enum.HumanoidVisualLayers.RLeg:
-      limit: 1
+      limit: 2
       required: false
     enum.HumanoidVisualLayers.LFoot:
-      limit: 1
+      limit: 2
       required: false
     enum.HumanoidVisualLayers.RFoot:
-      limit: 1
+      limit: 2
       required: false
 
 - type: entity
@@ -58,16 +57,16 @@
   components:
   - type: InitialBody
     organs:
-      Torso: OrganHumanTorso
-      Head: OrganHumanHead
-      ArmLeft: OrganHumanArmLeft
-      ArmRight: OrganHumanArmRight
-      HandRight: OrganHumanHandRight
-      HandLeft: OrganHumanHandLeft
-      LegLeft: OrganHumanLegLeft
-      LegRight: OrganHumanLegRight
-      FootLeft: OrganHumanFootLeft
-      FootRight: OrganHumanFootRight
+      Torso: OrganDragonbornTorso
+      Head: OrganDragonbornHead
+      ArmLeft: OrganDragonbornArmLeft
+      ArmRight: OrganDragonbornArmRight
+      HandRight: OrganDragonbornHandRight
+      HandLeft: OrganDragonbornHandLeft
+      LegLeft: OrganDragonbornLegLeft
+      LegRight: OrganDragonbornLegRight
+      FootLeft: OrganDragonbornFootLeft
+      FootRight: OrganDragonbornFootRight
       Brain: OrganHumanBrain
       Eyes: OrganHumanEyes
       Tongue: OrganReptilianTongue
@@ -105,3 +104,63 @@
       types:
         Slash: 2
         Blunt: 3
+        
+- type: entity
+  parent: OrganHumanExternal
+  id: OrganDragonbornExternal
+  abstract: true
+  components:
+  - type: Sprite
+    sprite: Mobs/Species/Human/parts.rsi
+  - type: VisualOrgan
+    data:
+      sprite: Mobs/Species/Human/parts.rsi
+  - type: VisualOrganMarkings
+    markingData:
+      group: Dragonborn
+      
+- type: entity
+  parent: [ OrganBaseTorsoSexed, OrganBaseTorso, OrganDragonbornExternal ]
+  id: OrganDragonbornTorso
+
+- type: entity
+  parent: [ OrganBaseHeadSexed, OrganBaseHead, OrganDragonbornExternal ]
+  id: OrganDragonbornHead
+  components:
+  - type: VisualOrganMarkings
+    hideableLayers:
+    - enum.HumanoidVisualLayers.Hair
+    - enum.HumanoidVisualLayers.Snout
+    - enum.HumanoidVisualLayers.FacialHair
+
+- type: entity
+  parent: [ OrganBaseArmLeft, OrganDragonbornExternal ]
+  id: OrganDragonbornArmLeft
+
+- type: entity
+  parent: [ OrganBaseArmRight, OrganDragonbornExternal ]
+  id: OrganDragonbornArmRight
+
+- type: entity
+  parent: [ OrganBaseHandLeft, OrganDragonbornExternal ]
+  id: OrganDragonbornHandLeft
+
+- type: entity
+  parent: [ OrganBaseHandRight, OrganDragonbornExternal ]
+  id: OrganDragonbornHandRight
+
+- type: entity
+  parent: [ OrganBaseLegLeft, OrganDragonbornExternal ]
+  id: OrganDragonbornLegLeft
+
+- type: entity
+  parent: [ OrganBaseLegRight, OrganDragonbornExternal ]
+  id: OrganDragonbornLegRight
+
+- type: entity
+  parent: [ OrganBaseFootLeft, OrganDragonbornExternal ]
+  id: OrganDragonbornFootLeft
+
+- type: entity
+  parent: [ OrganBaseFootRight, OrganDragonbornExternal ]
+  id: OrganDragonbornFootRight

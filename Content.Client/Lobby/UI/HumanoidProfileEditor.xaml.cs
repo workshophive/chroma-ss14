@@ -212,6 +212,17 @@ namespace Content.Client.Lobby.UI
                 OnSkinColorOnValueChanged();
             };
 
+            UpdateSubspecies();
+            
+            // Far Horizons start
+            SubspeciesButton.OnItemSelected += args =>
+            {
+                SubspeciesButton.SelectId(args.Id);
+                SetSpecies(_subspecies[args.Id].ID);
+                OnSkinColorOnValueChanged();
+            };
+            // Far Horizons end
+
             #region Skin
 
             Skin.OnValueChanged += _ =>
@@ -379,6 +390,7 @@ namespace Content.Client.Lobby.UI
             JobOverride = null;
 
             UpdateNameEdit();
+            UpdateSubspecies(); // Far Horizons
             UpdateFlavorTextEdit();
             UpdateSexControls();
             UpdateVoiceControls();

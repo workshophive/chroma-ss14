@@ -117,6 +117,15 @@ public sealed partial class SpeciesPrototype : IPrototype
     /// </summary>
     [DataField]
     public int MaxAge = 120;
+
+    // Far Horizons subspecies start
+    [DataField]
+    public ProtoId<SpeciesPrototype>? SubspeciesOf = null;
+    [DataField]
+    public LocId? SubspeciesName = null;
+    [DataField]
+    public bool HasSubspecies = false;
+    // Far Horizons subspecies end
 }
 
 public enum SpeciesNaming : byte

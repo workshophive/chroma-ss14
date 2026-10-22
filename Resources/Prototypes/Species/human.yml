@@ -5,3 +5,54 @@
   prototype: MobHuman
   dollPrototype: AppearanceHuman
   skinColoration: HumanToned
+  hasSubspecies: true # Far Horizons subspecies port
+  subspeciesName: species-name-human
+  
+# Dwarves
+- type: species
+  id: Dwarf
+  name: species-name-dwarf
+  roundStart: true
+  prototype: MobDwarf
+  dollPrototype: AppearanceDwarf
+  skinColoration: HumanToned
+  subspeciesOf: Human
+  subspeciesName: species-name-dwarf
+  defaultSoundsBySex:
+  - UnisexDwarf
+  - FemaleDwarf
+  - UnisexDwarf
+  voices:
+  - UnisexDwarf
+  - FemaleDwarf
+
+# Felikin
+- type: species
+  id: Felikin
+  name: subspecies-name-felikin
+  roundStart: true
+  prototype: MobFelikin
+  dollPrototype: AppearanceFelikin
+  subspeciesOf: Human
+  subspeciesName: subspecies-name-felikin
+  defaultSoundsBySex:
+  - Cat
+  - Cat
+  - Cat
+  
+# Dragonborn
+- type: species
+  id: Dragonborn
+  name: subspecies-name-dragonborn
+  roundStart: true
+  prototype: MobDragonborn
+  dollPrototype: AppearanceDragonborn
+  subspeciesOf: Human
+  subspeciesName: subspecies-name-dragonborn
+  defaultSoundsBySex:
+  - MaleReptilian
+  - FemaleReptilian
+  - MaleReptilian
+  voices:
+  - MaleReptilian
+  - FemaleReptilian

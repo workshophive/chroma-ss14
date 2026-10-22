@@ -5,7 +5,7 @@
   children:
   - Arachnid
   - Diona
-  - Dwarf
+#  - Dwarf
   - Human
   - Moth
   - Reptilian
@@ -32,6 +32,10 @@
   id: Human
   name: species-name-human
   text: "/ServerInfo/Guidebook/Mobs/Human.xml"
+  children: # Chroma edit - subspecies
+  - Dragonborn
+  - Dwarf
+  - Felikin
 
 - type: guideEntry
   id: Moth
@@ -57,3 +61,14 @@
   id: Vulpkanin
   name: species-name-vulpkanin
   text: "/ServerInfo/Guidebook/Mobs/Vulpkanin.xml"
+
+# CHROMA STARTS HERE
+- type: guideEntry
+  id: Dragonborn
+  name: subspecies-name-dragonborn
+  text: "/ServerInfo/_Chroma/Guidebook/Mobs/Dragonborn.xml"
+  
+- type: guideEntry
+  id: Felikin
+  name: subspecies-name-felikin
+  text: "/ServerInfo/_Chroma/Guidebook/Mobs/Felikin.xml"

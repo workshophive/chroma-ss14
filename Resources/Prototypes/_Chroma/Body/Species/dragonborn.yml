@@ -1,0 +1,176 @@
+- type: markingsGroup
+  parent: Undergarments
+  id: Dragonborn
+  limits:
+    enum.HumanoidVisualLayers.Hair:
+      limit: 1
+      required: false
+    enum.HumanoidVisualLayers.FacialHair:
+      limit: 1
+      required: false
+    enum.HumanoidVisualLayers.Tail:
+      limit: 1
+      required: true
+      default: [ LizardTailSmooth ]
+    enum.HumanoidVisualLayers.Chest:
+      limit: 3
+      required: false
+    enum.HumanoidVisualLayers.Snout:
+      limit: 1
+      required: false
+    enum.HumanoidVisualLayers.HeadTop:
+      limit: 2
+      required: false
+    enum.HumanoidVisualLayers.HeadSide:
+      limit: 1
+      required: false
+    enum.HumanoidVisualLayers.LArm:
+      limit: 2
+      required: true
+      default: [DBScalesLArm]
+    enum.HumanoidVisualLayers.RArm:
+      limit: 2
+      required: true
+      default: [DBScalesRArm]
+    enum.HumanoidVisualLayers.LHand:
+      limit: 2
+      required: true
+      default: [DBScalesLHand]
+    enum.HumanoidVisualLayers.RHand:
+      limit: 2
+      required: true
+      default: [DBScalesRHand]
+    enum.HumanoidVisualLayers.LLeg:
+      limit: 2
+      required: true
+      default: [DBScalesLLeg]
+    enum.HumanoidVisualLayers.RLeg:
+      limit: 2
+      required: true
+      default: [DBScalesRLeg]
+    enum.HumanoidVisualLayers.LFoot:
+      limit: 2
+      required: true
+      default: [DBScalesLFoot]
+    enum.HumanoidVisualLayers.RFoot:
+      limit: 2
+      required: true
+      default: [DBScalesRFoot]
+
+- type: entity
+  parent: AppearanceHuman
+  id: AppearanceDragonborn
+  categories: [HideSpawnMenu]
+  name: dragonborn appearance
+  components:
+  - type: InitialBody
+    organs:
+      Torso: OrganDragonbornTorso
+      Head: OrganDragonbornHead
+      ArmLeft: OrganDragonbornArmLeft
+      ArmRight: OrganDragonbornArmRight
+      HandRight: OrganDragonbornHandRight
+      HandLeft: OrganDragonbornHandLeft
+      LegLeft: OrganDragonbornLegLeft
+      LegRight: OrganDragonbornLegRight
+      FootLeft: OrganDragonbornFootLeft
+      FootRight: OrganDragonbornFootRight
+      Brain: OrganHumanBrain
+      Eyes: OrganHumanEyes
+      Tongue: OrganReptilianTongue
+      Appendix: OrganReptilianAppendix
+      Ears: OrganHumanEars
+      Lungs: OrganHumanLungs
+      Heart: OrganHumanHeart
+      Stomach: OrganReptilianStomach
+      Liver: OrganReptilianLiver
+      Kidneys: OrganReptilianKidneys
+  - type: HumanoidProfile
+    species: Dragonborn
+    
+- type: entity
+  parent: 
+  - AppearanceDragonborn
+  - BaseSpeciesMobOrganic
+  id: MobDragonborn
+  name: Urist McHands the Scalie
+  components:
+  - type: Speech
+    speechSounds: Lizard
+    speechVerb: Reptilian
+    allowedEmotes: ['Thump']
+  - type: Vocal
+    emoteSounds: MaleReptilian
+  - type: BodyEmotes
+    soundsId: ReptilianBodyEmotes
+  - type: Damageable
+    damageModifierSet: Dragonborn
+  - type: MeleeWeapon
+    soundHit:
+      collection: AlienClaw
+    angle: 30
+    animation: WeaponArcClaw
+    damage:
+      types:
+        Slash: 2
+        Blunt: 3
+        
+- type: entity
+  parent: OrganHumanExternal
+  id: OrganDragonbornExternal
+  abstract: true
+  components:
+  - type: Sprite
+    sprite: Mobs/Species/Human/parts.rsi
+  - type: VisualOrgan
+    data:
+      sprite: Mobs/Species/Human/parts.rsi
+  - type: VisualOrganMarkings
+    markingData:
+      group: Dragonborn
+      
+- type: entity
+  parent: [ OrganBaseTorsoSexed, OrganBaseTorso, OrganDragonbornExternal ]
+  id: OrganDragonbornTorso
+
+- type: entity
+  parent: [ OrganBaseHeadSexed, OrganBaseHead, OrganDragonbornExternal ]
+  id: OrganDragonbornHead
+  components:
+  - type: VisualOrganMarkings
+    hideableLayers:
+    - enum.HumanoidVisualLayers.Hair
+    - enum.HumanoidVisualLayers.Snout
+    - enum.HumanoidVisualLayers.FacialHair
+
+- type: entity
+  parent: [ OrganBaseArmLeft, OrganDragonbornExternal ]
+  id: OrganDragonbornArmLeft
+
+- type: entity
+  parent: [ OrganBaseArmRight, OrganDragonbornExternal ]
+  id: OrganDragonbornArmRight
+
+- type: entity
+  parent: [ OrganBaseHandLeft, OrganDragonbornExternal ]
+  id: OrganDragonbornHandLeft
+
+- type: entity
+  parent: [ OrganBaseHandRight, OrganDragonbornExternal ]
+  id: OrganDragonbornHandRight
+
+- type: entity
+  parent: [ OrganBaseLegLeft, OrganDragonbornExternal ]
+  id: OrganDragonbornLegLeft
+
+- type: entity
+  parent: [ OrganBaseLegRight, OrganDragonbornExternal ]
+  id: OrganDragonbornLegRight
+
+- type: entity
+  parent: [ OrganBaseFootLeft, OrganDragonbornExternal ]
+  id: OrganDragonbornFootLeft
+
+- type: entity
+  parent: [ OrganBaseFootRight, OrganDragonbornExternal ]
+  id: OrganDragonbornFootRight

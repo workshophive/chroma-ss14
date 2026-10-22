@@ -1,0 +1,17 @@
+<Document>
+  # Dragonborn
+  
+  <Box>
+	<GuideEntityEmbed Entity="MobDragonborn" Caption=""/>
+  </Box>
+  
+  ## General Information
+  
+  Dragonborn are a [color=lightgreen]sub-species of human[/color], born from the early stages of advanced genetic modification. They loosely resemble reptilians, but [color=palevioletred]are not, and cannot use their tails to drag objects[/color].
+  
+  Dragonborn deal a mixture of [color=lightgreen]slash and blunt[/color] damage with their unarmed attack.
+  
+  Due to thickened skin and scales on their limbs, dragonborn take [color=lightgreen]20% less blunt and piercing[/color], but take [color=palevioletred]10% more cold damage[/color] due to errors in their genetics. 
+  
+  They have similar digestion to reptilians.
+</Document>

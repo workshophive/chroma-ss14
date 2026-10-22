@@ -1,0 +1,178 @@
+- type: markingsGroup
+  parent: Undergarments
+  id: Felikin
+  limits:
+    enum.HumanoidVisualLayers.HeadTop:
+      limit: 1
+      required: true
+      default: [CatEars]
+    enum.HumanoidVisualLayers.Hair:
+      limit: 1
+      required: false
+      weight: 1
+    enum.HumanoidVisualLayers.FacialHair:
+      limit: 1
+      required: false
+    enum.HumanoidVisualLayers.Chest:
+      limit: 2
+      required: false
+    enum.HumanoidVisualLayers.Snout:
+      limit: 1
+      required: false
+    enum.HumanoidVisualLayers.LArm:
+      limit: 1
+      required: false
+    enum.HumanoidVisualLayers.RArm:
+      limit: 1
+      required: false
+    enum.HumanoidVisualLayers.LHand:
+      limit: 1
+      required: false
+    enum.HumanoidVisualLayers.RHand:
+      limit: 1
+      required: false
+    enum.HumanoidVisualLayers.LLeg:
+      limit: 1
+      required: false
+    enum.HumanoidVisualLayers.RLeg:
+      limit: 1
+      required: false
+    enum.HumanoidVisualLayers.LFoot:
+      limit: 1
+      required: false
+    enum.HumanoidVisualLayers.RFoot:
+      limit: 1
+      required: false
+    enum.HumanoidVisualLayers.Tail:
+      limit: 1
+      required: true
+      default: [CatTail]
+    enum.HumanoidVisualLayers.Special:
+      limit: 0
+      required: false
+      
+- type: entity
+  parent: AppearanceHuman
+  id: AppearanceFelikin
+  categories: [HideSpawnMenu]
+  name: felikin appearance
+  components:
+  - type: InitialBody
+    organs:
+      Torso: OrganFelikinTorso
+      Head: OrganFelikinHead
+      ArmLeft: OrganFelikinArmLeft
+      ArmRight: OrganFelikinArmRight
+      HandRight: OrganFelikinHandRight
+      HandLeft: OrganFelikinHandLeft
+      LegLeft: OrganFelikinLegLeft
+      LegRight: OrganFelikinLegRight
+      FootLeft: OrganFelikinFootLeft
+      FootRight: OrganFelikinFootRight
+      Brain: OrganHumanBrain
+      Eyes: OrganHumanEyes
+      Tongue: OrganHumanTongue
+      Appendix: OrganHumanAppendix
+      Ears: OrganHumanEars
+      Lungs: OrganHumanLungs
+      Heart: OrganHumanHeart
+      Stomach: OrganHumanStomach
+      Liver: OrganHumanLiver
+      Kidneys: OrganHumanKidneys
+  - type: HumanoidProfile
+    species: Felikin
+    
+- type: entity
+  parent:
+  - AppearanceFelikin
+  - BaseSpeciesMobOrganic
+  id: MobFelikin
+  name: Urist McHands the Catboy
+  components:
+  - type: Fixtures
+    fixtures: # TODO: This needs a second fixture just for mob collisions.
+      fix1:
+        shape:
+          !type:PhysShapeCircle
+          radius: 0.35
+        density: 105
+        restitution: 0.0
+        mask:
+        - MobMask
+        layer:
+        - MobLayer
+  - type: Damageable
+    damageModifierSet: Felikin
+  - type: Speech
+    speechVerb: Wawa
+    speechSounds: Cat
+    allowedEmotes: ['Chitter','CatMeow','CatHisses'] 
+  - type: MeleeWeapon
+    soundHit:
+      collection: AlienClaw
+    angle: 30
+    animation: WeaponArcClaw
+    damage:
+      types:
+        Slash: 2
+        Blunt: 3
+        
+- type: entity
+  parent: OrganHumanExternal
+  id: OrganFelikinExternal
+  abstract: true
+  components:
+  - type: Sprite
+    sprite: Mobs/Species/Human/parts.rsi
+  - type: VisualOrgan
+    data:
+      sprite: Mobs/Species/Human/parts.rsi
+  - type: VisualOrganMarkings
+    markingData:
+      group: Felikin
+      
+- type: entity
+  parent: [ OrganBaseTorsoSexed, OrganBaseTorso, OrganFelikinExternal ]
+  id: OrganFelikinTorso
+
+- type: entity
+  parent: [ OrganBaseHeadSexed, OrganBaseHead, OrganFelikinExternal ]
+  id: OrganFelikinHead
+  components:
+  - type: VisualOrganMarkings
+    hideableLayers:
+    - enum.HumanoidVisualLayers.Hair
+    - enum.HumanoidVisualLayers.Snout
+    - enum.HumanoidVisualLayers.FacialHair
+
+- type: entity
+  parent: [ OrganBaseArmLeft, OrganFelikinExternal ]
+  id: OrganFelikinArmLeft
+
+- type: entity
+  parent: [ OrganBaseArmRight, OrganFelikinExternal ]
+  id: OrganFelikinArmRight
+
+- type: entity
+  parent: [ OrganBaseHandLeft, OrganFelikinExternal ]
+  id: OrganFelikinHandLeft
+
+- type: entity
+  parent: [ OrganBaseHandRight, OrganFelikinExternal ]
+  id: OrganFelikinHandRight
+
+- type: entity
+  parent: [ OrganBaseLegLeft, OrganFelikinExternal ]
+  id: OrganFelikinLegLeft
+
+- type: entity
+  parent: [ OrganBaseLegRight, OrganFelikinExternal ]
+  id: OrganFelikinLegRight
+
+- type: entity
+  parent: [ OrganBaseFootLeft, OrganFelikinExternal ]
+  id: OrganFelikinFootLeft
+
+- type: entity
+  parent: [ OrganBaseFootRight, OrganFelikinExternal ]
+  id: OrganFelikinFootRight

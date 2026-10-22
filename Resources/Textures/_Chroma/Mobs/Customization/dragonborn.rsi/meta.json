@@ -1,0 +1,41 @@
+{
+	"version": 1,
+	"license": "CC-BY-SA-4.0",
+    "copyright": "By workshophive for ChromaStation",
+	"size": {"x": 32, "y": 32},
+	"states":
+	[
+	{
+		"name": "dbScalesLeftArm",
+		"directions": 4
+	},
+	{
+		"name": "dbScalesRightArm",
+		"directions": 4
+	},
+	{
+		"name": "dbScalesLeftHand",
+		"directions": 4
+	},
+	{
+		"name": "dbScalesRightHand",
+		"directions": 4
+	},
+	{
+		"name": "dbScalesLeftLeg",
+		"directions": 4
+	},
+	{
+		"name": "dbScalesRightLeg",
+		"directions": 4
+	},
+	{
+		"name": "dbScalesLeftFoot",
+		"directions": 4
+	},
+	{
+		"name": "dbScalesRightFoot",
+		"directions": 4
+	}
+	]
+}

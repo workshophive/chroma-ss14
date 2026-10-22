@@ -1,0 +1,18 @@
+<Document>
+  # Felikin
+  
+  <Box>
+	<GuideEntityEmbed Entity="MobFelikin" Caption=""/>
+  </Box>
+
+  ## General Information
+  
+  Felikin are a [color=lightgreen]sub-species of human[/color], born from the early stages of advanced genetic modification. Unlike their dragonborn kin, felikin are feline in nature [color=palevioletred]much more fragile due to genetic instability[/color].
+  
+  Felikin deal a mixture of [color=lightgreen]slash and blunt[/color] damage with their unarmed attack.
+  
+  As they are more genetically unstable than other species, almost all felikin have deficiencies in their connective tissues. As a result, they take [color=palevioletred]20% more blunt, piercing, and slash damage[/color]. While unintended, felikin are incredibly good at processing poisons, and take [color=lightgreen]75% less poison[/color].
+  
+  They don't metabolize anything any differently from humans.
+  
+</Document>

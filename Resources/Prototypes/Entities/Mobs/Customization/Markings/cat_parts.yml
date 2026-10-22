@@ -1,7 +1,7 @@
 - type: marking
   id: CatEars
-  bodyPart: Special
-  groupWhitelist: [Human]
+  bodyPart: HeadTop
+  groupWhitelist: [Felikin]
   coloring:
     default:
       type: !type:CategoryColoring
@@ -20,7 +20,7 @@
 - type: marking
   id: CatTail
   bodyPart: Tail
-  groupWhitelist: [Human]
+  groupWhitelist: [Felikin]
   coloring:
     default:
       type: !type:CategoryColoring

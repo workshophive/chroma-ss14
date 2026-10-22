@@ -1,0 +1,63 @@
+- type: marking
+  id: DBScalesLArm
+  bodyPart: LArm
+  groupWhitelist: [Dragonborn]
+  sprites:
+  - sprite: _Chroma/Mobs/Customization/dragonborn.rsi
+    state: dbScalesLeftArm
+
+- type: marking
+  id: DBScalesRArm
+  bodyPart: RArm
+  groupWhitelist: [Dragonborn]
+  sprites:
+  - sprite: _Chroma/Mobs/Customization/dragonborn.rsi
+    state: dbScalesRightArm
+    
+- type: marking
+  id: DBScalesLHand
+  bodyPart: LHand
+  groupWhitelist: [Dragonborn]
+  sprites:
+  - sprite: _Chroma/Mobs/Customization/dragonborn.rsi
+    state: dbScalesLeftHand
+
+- type: marking
+  id: DBScalesRHand
+  bodyPart: RHand
+  groupWhitelist: [Dragonborn]
+  sprites:
+  - sprite: _Chroma/Mobs/Customization/dragonborn.rsi
+    state: dbScalesRightHand
+    
+- type: marking
+  id: DBScalesLLeg
+  bodyPart: LLeg
+  groupWhitelist: [Dragonborn]
+  sprites:
+  - sprite: _Chroma/Mobs/Customization/dragonborn.rsi
+    state: dbScalesLeftLeg
+
+- type: marking
+  id: DBScalesRLeg
+  bodyPart: RLeg
+  groupWhitelist: [Dragonborn]
+  sprites:
+  - sprite: _Chroma/Mobs/Customization/dragonborn.rsi
+    state: dbScalesRightLeg
+    
+- type: marking
+  id: DBScalesLFoot
+  bodyPart: LFoot
+  groupWhitelist: [Dragonborn]
+  sprites:
+  - sprite: _Chroma/Mobs/Customization/dragonborn.rsi
+    state: dbScalesLeftFoot
+
+- type: marking
+  id: DBScalesRFoot
+  bodyPart: RFoot
+  groupWhitelist: [Dragonborn]
+  sprites:
+  - sprite: _Chroma/Mobs/Customization/dragonborn.rsi
+    state: dbScalesRightFoot

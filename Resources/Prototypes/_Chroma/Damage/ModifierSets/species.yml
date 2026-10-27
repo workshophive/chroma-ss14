@@ -14,3 +14,13 @@
     Blunt: 1.2
     Piercing: 1.2
     Slash: 1.2
+    
+# They'll get structural damage later
+# Cotton and cloth vulnerable to acids, asphyxiation can be tanked
+- type: damageModifierSet
+  id: Mynki
+  coefficients:
+    Asphyxiation: 0.45
+    Bloodloss: 0.85
+    Heat: 1.1
+    Caustic: 1.9

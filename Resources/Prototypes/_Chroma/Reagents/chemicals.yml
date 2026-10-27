@@ -1,0 +1,9 @@
+- type: reagent
+  id: Electrum
+  name: reagent-name-electrum
+  desc: reagent-desc-electrum
+  flavor: metallic
+  physicalDesc: reagent-phyiscal-desc-metallic
+  color: "#fffee9"
+  boilingPoint: 2173.0
+  meltingPoint: 1273.0

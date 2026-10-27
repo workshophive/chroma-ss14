@@ -1,0 +1,19 @@
+- type: species
+  id: Mynki
+  name: species-name-mynki
+  roundStart: true
+  prototype: MobMynki
+  defaultSkinTone: "#ffda93"
+  dollPrototype: AppearanceMynki
+  skinColoration: Hues
+  maleFirstNames: NamesMynkiFirst
+  femaleFirstNames: NamesMynkiFirst
+  naming: FirstDashFirst
+  sexes:
+  - Unsexed
+  defaultSoundsBySex:
+  - UnisexMynki
+  - UnisexMynki
+  - UnisexMynki
+  voices:
+  - UnisexMynki

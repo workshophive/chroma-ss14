@@ -1,0 +1,29 @@
+- type: reagent
+  parent: Blood
+  id: ElectrumBlood
+  name: reagent-name-electrum-blood
+  group: Biological
+  desc: reagent-desc-electrum-blood
+  flavor: bitter
+  color: "#f7f5b3"
+  recognizable: true
+  physicalDesc: reagent-physical-desc-enigmatic
+  plantMetabolism:
+  - !type:DnaImprint
+    reagent: ElectrumBlood
+    minScale: 5
+    leader: true
+    friendly: true
+    guidebookText: entity-effect-guidebook-dna-imprint
+  metabolisms:
+    Digestion:
+      metabolites:
+        Electrum: 0.3
+        Fiber: 0.1
+      effects:
+      - !type:Satiate
+        satiationType: Hunger
+        factor: 0.66
+        conditions:
+          - !type:MetabolizerTypeCondition
+            type: [Moth]

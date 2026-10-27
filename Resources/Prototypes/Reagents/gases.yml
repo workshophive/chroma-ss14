@@ -237,12 +237,12 @@
       - !type:Oxygenate
         conditions:
         - !type:MetabolizerTypeCondition
-          type: [ Vox, Slime ]
+          type: [ Vox, Slime, Mynki ]
       # Converts Nitrogen into Ammonia
       - !type:ModifyLungGas
         conditions:
         - !type:MetabolizerTypeCondition
-          type: [ Vox ]
+          type: [ Vox, Mynki ]
         ratios:
           Ammonia: 1.0
           Nitrogen: -1.0

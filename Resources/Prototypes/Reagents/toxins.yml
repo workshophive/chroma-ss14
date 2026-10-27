@@ -421,7 +421,7 @@
         probability: 0.04 #Scaled for time, not metabolismrate.
         conditions:
         - !type:MetabolizerTypeCondition
-          type: [ Animal, Arachnid ]
+          type: [ Animal, Arachnid, Mynki ]
 
 - type: reagent
   id: Amatoxin
@@ -452,6 +452,10 @@
     Bloodstream:
       effects:
         - !type:HealthChange
+          conditions:
+          - !type:MetabolizerTypeCondition
+            type: [Vox, Mynki]
+            inverted: true
           damage:
             types:
               Poison: 2
@@ -499,12 +503,12 @@
         probability: 0.1
         conditions:
         - !type:MetabolizerTypeCondition
-          type: [ Animal, Vox, Plant, Arachnid ]
+          type: [ Animal, Vox, Plant, Arachnid, Mynki ]
           inverted: true
       - !type:HealthChange
         conditions:
         - !type:MetabolizerTypeCondition
-          type: [ Animal, Vox, Plant, Arachnid ]
+          type: [ Animal, Vox, Plant, Arachnid, Mynki ]
           inverted: true
         damage:
           types:
@@ -638,6 +642,9 @@
         - !type:ReagentCondition
           reagent: Vestine
           min: 5
+        - !type:MetabolizerTypeCondition
+          type: [Mynki]
+          inverted: true
       - !type:MovementSpeedModifier
         walkSpeedModifier: 0.8
         sprintSpeedModifier: 0.8
@@ -749,7 +756,7 @@
         factor: 1
         conditions:
         - !type:MetabolizerTypeCondition
-          type: [Vox]
+          type: [Vox, Mynki]
 
 - type: reagent
   id: Hemorrhinol

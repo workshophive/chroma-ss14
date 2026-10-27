@@ -188,6 +188,14 @@
           inverted: true
       - !type:Drunk
         boozePower: 2
+      # mynki get damaged from ethanol due to being unable to process it correctly
+      - !type:HealthChange
+        conditions:
+        - !type:MetabolizerTypeCondition
+          type: [Mynki]
+        damage:
+          types:
+            Caustic: 0.2
 
 - type: reagent
   id: Gin

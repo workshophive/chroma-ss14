@@ -1,0 +1,278 @@
+- type: markingsGroup
+  parent: Undergarments
+  id: Mynki
+  onlyGroupWhitelisted: true
+  limits:
+    enum.HumanoidVisualLayers.Hair:
+      limit: 0
+      required: false
+    enum.HumanoidVisualLayers.FacialHair:
+      limit: 0
+      required: false
+    enum.HumanoidVisualLayers.Head:
+      limit: 2
+      required: false
+    enum.HumanoidVisualLayers.HeadTop:
+      limit: 1
+      required: false
+    enum.HumanoidVisualLayers.HeadSide:
+      limit: 1
+      required: false
+    enum.HumanoidVisualLayers.Chest:
+      limit: 2
+      required: false
+    enum.HumanoidVisualLayers.LArm:
+      limit: 1
+      required: false
+    enum.HumanoidVisualLayers.RArm:
+      limit: 1
+      required: false
+    enum.HumanoidVisualLayers.LLeg:
+      limit: 1
+      required: false
+    enum.HumanoidVisualLayers.RLeg:
+      limit: 1
+      required: false
+    enum.HumanoidVisualLayers.Overlay:
+      limit: 1
+      required: false
+    enum.HumanoidVisualLayers.Tail:
+      limit: 1
+      required: false
+    enum.HumanoidVisualLayers.Snout:
+      limit: 1
+      required: false
+      
+- type: entity
+  parent: BaseSpeciesAppearance
+  id: AppearanceMynki
+  categories: [HideSpawnMenu]
+  name: mynki appearance
+  components:
+  - type: InitialBody
+    organs:
+      Torso: OrganMynkiTorso
+      Head: OrganMynkiHead
+      ArmLeft: OrganMynkiArmLeft
+      ArmRight: OrganMynkiArmRight
+      HandRight: OrganMynkiHandRight
+      HandLeft: OrganMynkiHandLeft
+      LegLeft: OrganMynkiLegLeft
+      LegRight: OrganMynkiLegRight
+      FootLeft: OrganMynkiFootLeft
+      FootRight: OrganMynkiFootRight
+      Brain: OrganMynkiBrain
+      Eyes: OrganMynkiEyes
+      Tongue: OrganMynkiTongue
+      Appendix: OrganMynkiAppendix
+      Ears: OrganMynkiEars
+      Lungs: OrganMynkiLungs
+      Heart: OrganMynkiHeart
+      Stomach: OrganMynkiStomach
+      Liver: OrganMynkiLiver
+      Kidneys: OrganMynkiKidneys
+  - type: HumanoidProfile
+    species: Mynki
+    
+- type: entity
+  parent:
+  - AppearanceMynki
+  - BaseSpeciesMobOrganic
+  id: MobMynki
+  name: Urist McTsavua
+  components:
+  - type: Damageable
+    damageModifierSet: Mynki
+  - type: Speech
+    speechVerb: Mynki
+    speechSounds: Mynki
+  - type: TypingIndicator
+    proto: moth # To do - make mynki one
+  - type: Bloodstream
+    bloodReferenceSolution:
+      reagents:
+      - ReagentId: ElectrumBlood
+        Quantity: 600
+  - type: Vocal
+    emoteSounds: UnisexMynki
+  - type: TemperatureDamage # Mynki can tolerate heat and cold equally; however, they burn easier still!
+    heatDamageThreshold: 321.15
+    coldDamageThreshold: 230
+    coldDamage:
+      types:
+        Cold: 0.5
+    heatDamage:
+      types:
+        Heat: 1
+  - type: Flammable
+    damage:
+      types:
+        Heat: 2 # Burn easier because of the whole. Cloth thing.
+  - type: PassiveDamage
+    # Lets mynki tank some cellular damage, as well as passively healing caustic damage due to them taking more
+    # Maybe let them heal structural damage as well when it's implemented?
+    intervalHaltOnDamageTaken: 5s
+    allowedStates:
+    - Alive
+    damage:
+      types:
+        Heat: -0.07
+        Caustic: -0.06
+        Blunt: -0.05
+        Piercing: -0.05
+        Slash: -0.05
+        Cellular: -0.2
+  - type: MeleeWeapon
+    soundHit:
+      collection: AlienClaw
+    angle: 15
+    animation: WeaponArcClaw
+    damage:
+      types:
+        Piercing: 2
+        Structural: 0.5
+
+- type: entity
+  parent: OrganBaseOrganic
+  id: OrganMynki
+  abstract: true
+  suffix: Mynki
+
+- type: entity
+  id: OrganMynkiMetabolizer
+  abstract: true
+  components:
+  - type: Metabolizer
+    metabolizerTypes: [ Mynki ]
+
+- type: entity
+  parent: OrganMynki
+  id: OrganMynkiInternal
+  abstract: true
+  components:
+  - type: Sprite
+    sprite: _Chroma/Mobs/Species/Mynki/organs.rsi
+
+- type: entity
+  id: OrganMynkiVisual
+  abstract: true
+  components:
+  - type: VisualOrgan
+    data:
+      sprite: _Chroma/Mobs/Species/Mynki/parts.rsi
+  - type: VisualOrganMarkings
+    markingData:
+      group: Mynki
+
+- type: entity
+  parent: [ OrganMynki, OrganMynkiVisual ]
+  id: OrganMynkiExternal
+  abstract: true
+  components:
+  - type: Sprite
+    sprite: _Chroma/Mobs/Species/Mynki/parts.rsi
+
+- type: entity
+  parent: [ OrganBaseTorso, OrganMynkiExternal ]
+  id: OrganMynkiTorso
+  components:
+  - type: VisualOrganMarkings
+    hideableLayers:
+    - enum.HumanoidVisualLayers.Tail
+
+- type: entity
+  parent: [ OrganBaseHead, OrganMynkiExternal ]
+  id: OrganMynkiHead
+  components:
+  - type: VisualOrganMarkings
+    hideableLayers:
+    - enum.HumanoidVisualLayers.Snout
+    - enum.HumanoidVisualLayers.HeadTop
+    - enum.HumanoidVisualLayers.HeadSide
+    dependentHidingLayers:
+      enum.HumanoidVisualLayers.Snout:
+      - enum.HumanoidVisualLayers.SnoutCover
+
+- type: entity
+  parent: [ OrganBaseArmLeft, OrganMynkiExternal ]
+  id: OrganMynkiArmLeft
+
+- type: entity
+  parent: [ OrganBaseArmRight, OrganMynkiExternal ]
+  id: OrganMynkiArmRight
+
+- type: entity
+  parent: [ OrganBaseHandLeft, OrganMynkiExternal ]
+  id: OrganMynkiHandLeft
+
+- type: entity
+  parent: [ OrganBaseHandRight, OrganMynkiExternal ]
+  id: OrganMynkiHandRight
+
+- type: entity
+  parent: [ OrganBaseLegLeft, OrganMynkiExternal ]
+  id: OrganMynkiLegLeft
+
+- type: entity
+  parent: [ OrganBaseLegRight, OrganMynkiExternal ]
+  id: OrganMynkiLegRight
+
+- type: entity
+  parent: [ OrganBaseFootLeft, OrganMynkiExternal ]
+  id: OrganMynkiFootLeft
+
+- type: entity
+  parent: [ OrganBaseFootRight, OrganMynkiExternal ]
+  id: OrganMynkiFootRight
+
+- type: entity
+  parent: [ OrganBaseBrain, OrganMynkiInternal ]
+  id: OrganMynkiBrain
+
+- type: entity
+  parent: [ OrganMynkiVisual, OrganBaseEyes, OrganMynkiInternal ]
+  id: OrganMynkiEyes
+  components:
+  - type: EyeBlinking
+    eyelidsSprite: /Textures/_Chroma/Mobs/Species/Mynki/parts.rsi
+  - type: Appearance
+
+- type: entity
+  parent: [ OrganBaseTongue, OrganMynkiInternal ]
+  id: OrganMynkiTongue
+
+- type: entity
+  parent: [ OrganBaseAppendix, OrganMynkiInternal ]
+  id: OrganMynkiAppendix
+
+- type: entity
+  parent: [ OrganBaseEars, OrganMynkiInternal ]
+  id: OrganMynkiEars
+
+- type: entity
+  parent: [ OrganBaseLungs, OrganMynkiInternal, OrganMynkiMetabolizer ]
+  id: OrganMynkiLungs
+
+- type: entity
+  parent: [ OrganBaseHeart, OrganMynkiInternal, OrganMynkiMetabolizer ]
+  id: OrganMynkiHeart
+
+- type: entity
+  parent: [ OrganBaseStomach, OrganMynkiInternal, OrganMynkiMetabolizer ]
+  id: OrganMynkiStomach
+  components:
+  - type: Stomach
+    specialDigestible:
+      tags:
+      - Trash
+      - ClothMade
+      - Paper
+    isSpecialDigestibleExclusive: false
+
+- type: entity
+  parent: [ OrganBaseLiver, OrganMynkiInternal, OrganMynkiMetabolizer ]
+  id: OrganMynkiLiver
+
+- type: entity
+  parent: [ OrganBaseKidneys, OrganMynkiInternal, OrganMynkiMetabolizer ]
+  id: OrganMynkiKidneys

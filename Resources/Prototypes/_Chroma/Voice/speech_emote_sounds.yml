@@ -1,0 +1,30 @@
+- type: emoteSounds
+  id: UnisexMynki
+  voiceSelectorName: humanoid-profile-editor-voice-neutral
+  sounds:
+    Scream:
+      path: /Audio/_Chroma/Voice/Mynki/scream.ogg
+    Laugh:
+      path: /Audio/_Chroma/Voice/Mynki/mynki_laugh.ogg
+    Sneeze:
+      collection: VulpkaninSneeze
+    Yawn:
+      collection: VulpkaninYawns
+    Cough:
+      collection: MaleCoughs
+    Whistle:
+      collection: Whistles
+    Sigh:
+      collection: MaleSigh
+    Crying:
+      collection: VulpkaninWhines
+    Weh:
+      collection: Weh
+    Hew:
+      collection: Hew
+    Gasp:
+      collection: MaleGasp
+    DefaultDeathgasp:
+      collection: DeathGasp
+  params:
+    variation: 0.125

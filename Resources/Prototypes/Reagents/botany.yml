@@ -255,7 +255,7 @@
         probability: 0.12
         conditions:
         - !type:MetabolizerTypeCondition
-          type: [ Rat, Vox ]
+          type: [ Rat, Vox, Mynki ]
           inverted: true
         - !type:ReagentCondition
           reagent: Ammonia
@@ -289,10 +289,10 @@
         - !type:ReagentCondition
           reagent: Ammonia
           min: 1
-      - !type:Oxygenate # ammonia displaces nitrogen in vox blood
+      - !type:Oxygenate # ammonia displaces nitrogen in vox blood (+ mynki)
         conditions:
         - !type:MetabolizerTypeCondition
-          type: [ Vox ]
+          type: [ Vox, Mynki ]
         factor: -4
 
 

@@ -36,10 +36,6 @@
   skinColoration: HumanToned
   subspeciesOf: Human
   subspeciesName: subspecies-name-felikin
-  defaultSoundsBySex:
-  - Cat
-  - Cat
-  - Cat
   
 # Dragonborn
 - type: species

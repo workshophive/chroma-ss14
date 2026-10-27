@@ -3,6 +3,7 @@ trait-editor-points-label = Available Points
 trait-editor-search-placeholder = Search traits...
 trait-editor-footer-hint = Hover over traits for details
 trait-editor-footer-info = Negative costs grant bonus points
+trait-category-species = Species
 
 trait-category-traits = {$selected} / {$max} traits
 trait-category-traits-unlimited = {$selected} traits
@@ -12,5 +13,3 @@ trait-conditions-tooltip = [bold]Requirements:[/bold]
     {$requirements}
 trait-conditions-not-met-tooltip = Requirements not met:
     {$requirements}
-
-trait-category-species = Species

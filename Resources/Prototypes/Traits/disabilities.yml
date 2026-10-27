@@ -6,31 +6,44 @@
   description: trait-blindness-desc
   traitGear: WhiteCane
   category: Disabilities
+  cost: 0
+  effects:
+  - !type:AddCompsEffect
+    components:
+    - type: PermanentBlindness
+  - !type:SpawnItemInHandEffect
+    item: WhiteCane
   whitelist:
     components:
       - Blindable
-  components:
-    - type: PermanentBlindness
 
 - type: trait
   id: PoorVision
   name: trait-poor-vision-name
   description: trait-poor-vision-desc
-  traitGear: ClothingEyesGlasses
   category: Disabilities
+  cost: 0
+  effects:
+  - !type:AddCompsEffect
+    components:
+    - type: PermanentBlindness
+      blindness: 4
+      glassesFixable: true
+  - !type:SpawnItemInHandEffect
+    item: ClothingEyesGlasses
   whitelist:
     components:
       - Blindable
-  components:
-    - type: PermanentBlindness
-      blindness: 4
 
 - type: trait
   id: Narcolepsy
   name: trait-narcolepsy-name
   description: trait-narcolepsy-desc
   category: Disabilities
-  components:
+  cost: 0
+  effects:
+  - !type:AddCompsEffect
+    components:
     - type: Narcolepsy
       maxTimeBetweenIncidents: 600
       minTimeBetweenIncidents: 300
@@ -42,7 +55,10 @@
   name: trait-unrevivable-name
   description: trait-unrevivable-desc
   category: Disabilities
-  components:
+  cost: 0
+  effects:
+  - !type:AddCompsEffect
+    components:
     - type: Unrevivable
       cloneable: true
 
@@ -51,28 +67,35 @@
   name: trait-monochromacy-name
   description: trait-monochromacy-desc
   category: Disabilities
-  components:
-  - type: BlackAndWhiteOverlay
+  cost: 0
+  effects:
+  - !type:AddCompsEffect
+    components:
+    - type: BlackAndWhiteOverlay
 
 - type: trait
   id: Muted
   name: trait-muted-name
   description: trait-muted-desc
   category: Disabilities
+  cost: 0
+  effects:
+  - !type:AddCompsEffect
+    components:
+    - type: Muted
   blacklist:
     components:
       - BorgChassis
-  specials:
-  - !type:ApplyStatusEffectSpecial
-    statusEffects:
-    - TraitStatusEffectMuted
 
 - type: trait
   id: Paracusia
   name: trait-paracusia-name
   description: trait-paracusia-desc
   category: Disabilities
-  components:
+  cost: 0
+  effects:
+  - !type:AddCompsEffect
+    components:
     - type: Paracusia
       minTimeBetweenIncidents: 0.1
       maxTimeBetweenIncidents: 300
@@ -85,36 +108,43 @@
   name: trait-painnumbness-name
   description: trait-painnumbness-desc
   category: Disabilities
-  specials:
-  - !type:ApplyStatusEffectSpecial
+  cost: 0
+  effects:
+  - !type:AddStatusEffect
     statusEffects:
-    - TraitStatusEffectPainNumbness
+    - PainNumbnessTraitStatusEffect
 
 - type: trait
   id: Hemophilia
   name: trait-hemophilia-name
   description: trait-hemophilia-desc
   category: Disabilities
-  specials:
-  - !type:ApplyStatusEffectSpecial
+  cost: -2
+  effects:
+  - !type:AddStatusEffect
     statusEffects:
-    - TraitStatusEffectHemophilia
+    - StatusEffectHemophiliaTrait
 
 - type: trait
   id: ImpairedMobility
   name: trait-impaired-mobility-name
   description: trait-impaired-mobility-desc
-  traitGear: OffsetCane
   category: Disabilities
-  components:
+  cost: -1
+  effects:
+  - !type:AddCompsEffect
+    components:
     - type: ImpairedMobility
+  - !type:SpawnItemInHandEffect
+    item: OffsetCane
 
 - type: trait
   id: BlinkDyspraxia
   name: trait-blink-dyspraxia-name
   description: trait-blink-dyspraxia-desc
   category: Disabilities
-  specials:
-  - !type:ApplyStatusEffectSpecial
+  cost: -1
+  effects:
+  - !type:AddStatusEffect
     statusEffects:
     - TraitStatusEffectBlinkDyspraxia

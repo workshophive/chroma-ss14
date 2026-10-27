@@ -7,14 +7,18 @@
   name: trait-accentless-name
   description: trait-accentless-desc
   category: SpeechTraits
-  cost: 2
-  components:
-  - type: Accentless
-    removes:
-    - type: LizardAccent
-    - type: MothAccent
-    - type: ReplacementAccent
-      accent: scottish
+  cost: 0
+  effects:
+    - !type:AddCompsEffect
+      components:
+        - type: Accentless
+          removes:
+            - type: OwOAccent
+            - type: LizardAccent
+            - type: MothAccent
+            - type: GrowlingAccent
+            - type: ReplacementAccent
+              accent: dwarf
 
 # 1 Cost
 
@@ -24,8 +28,10 @@
   description: trait-southern-desc
   category: SpeechTraits
   cost: 1
-  components:
-  - type: SouthernAccent
+  effects:
+    - !type:AddCompsEffect
+      components:
+        - type: SouthernAccent
 
 - type: trait
   id: GermanAccent
@@ -33,8 +39,10 @@
   description: trait-german-desc
   category: SpeechTraits
   cost: 1
-  components:
-  - type: GermanAccent
+  effects:
+    - !type:AddCompsEffect
+      components:
+        - type: GermanAccent
 
 - type: trait
   id: FrenchAccent
@@ -42,8 +50,10 @@
   description: trait-french-desc
   category: SpeechTraits
   cost: 1
-  components:
-  - type: FrenchAccent
+  effects:
+    - !type:AddCompsEffect
+      components:
+        - type: FrenchAccent
 
 - type: trait
   id: SpanishAccent
@@ -51,8 +61,10 @@
   description: trait-spanish-desc
   category: SpeechTraits
   cost: 1
-  components:
-  - type: SpanishAccent
+  effects:
+    - !type:AddCompsEffect
+      components:
+        - type: SpanishAccent
 
 - type: trait
   id: Liar
@@ -60,9 +72,11 @@
   description: trait-liar-desc
   category: SpeechTraits
   cost: 1
-  components:
-  - type: ReplacementAccent
-    accent: liar
+  effects:
+    - !type:AddCompsEffect
+      components:
+        - type: ReplacementAccent
+          accent: liar
 
 - type: trait
   id: ScottishAccent
@@ -70,9 +84,10 @@
   description: trait-scottish-desc
   category: SpeechTraits
   cost: 1
-  components:
-  - type: ReplacementAccent
-    accent: scottish
+  effects:
+    - !type:AddCompsEffect
+      components:
+        - type: ScottishAccent
 
 # 2 Cost
 
@@ -82,12 +97,14 @@
   description: trait-socialanxiety-desc
   category: SpeechTraits
   cost: 2
-  components:
-  - type: StutteringAccent
-    matchRandomProb: 0.1
-    fourRandomProb: 0
-    threeRandomProb: 0
-    cutRandomProb: 0
+  effects:
+    - !type:AddCompsEffect
+      components:
+        - type: StutteringAccent
+          matchRandomProb: 0.1
+          fourRandomProb: 0
+          threeRandomProb: 0
+          cutRandomProb: 0
 
 - type: trait
   id: FrontalLisp
@@ -95,5 +112,7 @@
   description: trait-frontal-lisp-desc
   category: SpeechTraits
   cost: 2
-  components:
-  - type: FrontalLisp
+  effects:
+    - !type:AddCompsEffect
+      components:
+        - type: FrontalLisp

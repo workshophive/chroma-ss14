@@ -1,3 +1,4 @@
+using Content.Shared._Offbrand.Organs;
 using Content.Shared.Atmos.Rotting;
 using Content.Shared.Chat;
 using Content.Shared.Damage.Systems;
@@ -18,6 +19,7 @@ using Content.Shared.Timing.Systems;
 using Content.Shared.Traits.Assorted;
 using Robust.Shared.Audio.Systems;
 using Robust.Shared.Player;
+using Content.Shared._Offbrand.Wounds; // Offbrand
 
 namespace Content.Shared.Medical;
 
@@ -94,6 +96,11 @@ public abstract partial class SharedDefibrillatorSystem : EntitySystem
 
         if (!_powerCell.HasActivatableCharge(ent.Owner, user: user, predicted: true))
             return false;
+
+        // Begin Offbrand
+        if (HasComp<PerfusionComponent>(target))
+            return true;
+        // End Offbrand
 
         return true;
     }
@@ -189,16 +196,35 @@ public abstract partial class SharedDefibrillatorSystem : EntitySystem
 
     private bool TryRevive(Entity<DefibrillatorComponent> ent, EntityUid user, EntityUid target, bool isOriginal)
     {
+        TryComp<HeartDefibrillatableComponent>(target, out var heartDefibrillatable); // Offbrand
+
         bool failedRevive = true;
         string? message = null;
         if (_rotting.IsRotten(target))
         {
             message = Loc.GetString("defibrillator-rotten");
         }
-        else if (TryComp<UnrevivableComponent>(target, out var unrevivable))
+        else if (heartDefibrillatable is null && TryComp<UnrevivableComponent>(target, out var unrevivable))
         {
             message = Loc.GetString(unrevivable.ReasonMessage);
         }
+        // Begin offbrand
+        else if (heartDefibrillatable is not null && _mobState.IsDead(target, targetMobState))
+        {
+            _chat.TrySendInGameICMessage(ent.Owner, Loc.GetString(heartDefibrillatable.TargetIsDead),
+                InGameICChatType.Speak, true);
+        }
+        else if (heartDefibrillatable is not null)
+        {
+            var before = new BeforeTargetDefibrillatedEvent(new());
+            RaiseLocalEvent(target, ref before);
+
+            foreach (var message in before.Messages)
+            {
+                _chat.TrySendInGameICMessage(ent.Owner, Loc.GetString(message), InGameICChatType.Speak, true);
+            }
+        }
+        // End Offbrand
         else
         {
             TryComp<MobStateComponent>(target, out var targetMobState);

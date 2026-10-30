@@ -1,4 +1,4 @@
-using Content.Shared._Offbrand.Skeletons;
+// using Content.Shared._Offbrand.Skeletons; Chroma - Already exists in Content.Shared.Body
 using Content.Shared._Offbrand.Wounds;
 using Content.Shared.Body;
 using Content.Shared.DoAfter;

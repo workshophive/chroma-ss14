@@ -50,6 +50,13 @@ public sealed partial class VisualOrganMarkingsComponent : Component
     /// </summary>
     [ViewVariables]
     public List<Marking> AppliedMarkings = new();
+
+
+    /// <summary>
+    /// Offbrand - Client only - the last markings applied by this component, per sprite target.
+    /// </summary>
+    [ViewVariables]
+    public Dictionary<EntityUid, List<Marking>> AppliedMarkingsByTarget = new();
 }
 
 /// <summary>

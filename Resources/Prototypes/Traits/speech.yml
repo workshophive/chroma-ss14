@@ -11,14 +11,14 @@
   effects:
     - !type:AddCompsEffect
       components:
-        - type: Accentless
-          removes:
-            - type: OwOAccent
-            - type: LizardAccent
-            - type: MothAccent
-            - type: GrowlingAccent
-            - type: ReplacementAccent
-              accent: dwarf
+      - type: Accentless
+        removes:
+          - type: OwOAccent
+          - type: LizardAccent
+          - type: MothAccent
+          - type: GrowlingAccent
+          - type: ReplacementAccent
+            accent: dwarf
 
 # 1 Cost
 
@@ -31,7 +31,7 @@
   effects:
     - !type:AddCompsEffect
       components:
-        - type: SouthernAccent
+      - type: SouthernAccent
 
 - type: trait
   id: GermanAccent
@@ -42,7 +42,7 @@
   effects:
     - !type:AddCompsEffect
       components:
-        - type: GermanAccent
+      - type: GermanAccent
 
 - type: trait
   id: FrenchAccent
@@ -53,7 +53,7 @@
   effects:
     - !type:AddCompsEffect
       components:
-        - type: FrenchAccent
+      - type: FrenchAccent
 
 - type: trait
   id: SpanishAccent
@@ -64,7 +64,7 @@
   effects:
     - !type:AddCompsEffect
       components:
-        - type: SpanishAccent
+      - type: SpanishAccent
 
 - type: trait
   id: Liar
@@ -75,8 +75,8 @@
   effects:
     - !type:AddCompsEffect
       components:
-        - type: ReplacementAccent
-          accent: liar
+      - type: ReplacementAccent
+        accent: liar
 
 - type: trait
   id: ScottishAccent
@@ -87,7 +87,7 @@
   effects:
     - !type:AddCompsEffect
       components:
-        - type: ScottishAccent
+      - type: ScottishAccent
 
 # 2 Cost
 
@@ -100,11 +100,11 @@
   effects:
     - !type:AddCompsEffect
       components:
-        - type: StutteringAccent
-          matchRandomProb: 0.1
-          fourRandomProb: 0
-          threeRandomProb: 0
-          cutRandomProb: 0
+      - type: StutteringAccent
+        matchRandomProb: 0.1
+        fourRandomProb: 0
+        threeRandomProb: 0
+        cutRandomProb: 0
 
 - type: trait
   id: FrontalLisp
@@ -115,4 +115,4 @@
   effects:
     - !type:AddCompsEffect
       components:
-        - type: FrontalLisp
+      - type: FrontalLisp

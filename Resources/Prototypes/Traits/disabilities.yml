@@ -4,9 +4,8 @@
   id: Blindness
   name: trait-blindness-name
   description: trait-blindness-desc
-  traitGear: WhiteCane
   category: Disabilities
-  cost: 0
+  cost: -2
   effects:
   - !type:AddCompsEffect
     components:
@@ -22,7 +21,7 @@
   name: trait-poor-vision-name
   description: trait-poor-vision-desc
   category: Disabilities
-  cost: 0
+  cost: -1
   effects:
   - !type:AddCompsEffect
     components:
@@ -80,9 +79,9 @@
   category: Disabilities
   cost: 0
   effects:
-  - !type:AddCompsEffect
-    components:
-    - type: Muted
+  - !type:AddStatusEffect
+    statusEffects:
+    - TraitStatusEffectMuted
   blacklist:
     components:
       - BorgChassis
@@ -112,7 +111,7 @@
   effects:
   - !type:AddStatusEffect
     statusEffects:
-    - PainNumbnessTraitStatusEffect
+    - TraitStatusEffectPainNumbness
 
 - type: trait
   id: Hemophilia
@@ -123,7 +122,7 @@
   effects:
   - !type:AddStatusEffect
     statusEffects:
-    - StatusEffectHemophiliaTrait
+    - HemophiliaStatusEffect
 
 - type: trait
   id: ImpairedMobility
@@ -147,4 +146,4 @@
   effects:
   - !type:AddStatusEffect
     statusEffects:
-    - TraitStatusEffectBlinkDyspraxia
+    - BlinkDyspraxiaStatusEffect

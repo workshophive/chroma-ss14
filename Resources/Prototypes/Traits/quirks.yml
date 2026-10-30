@@ -9,7 +9,7 @@
   effects:
     - !type:AddCompsEffect
       components:
-        - type: Pacified
+      - type: Pacified
 
 - type: trait
   id: LightweightDrunk
@@ -20,8 +20,8 @@
   effects:
     - !type:AddCompsEffect
       components:
-        - type: LightweightDrunk
-          boozeStrengthMultiplier: 2
+      - type: LightweightDrunk
+        boozeStrengthMultiplier: 2
 
 - type: trait
   id: Snoring
@@ -32,4 +32,4 @@
   effects:
     - !type:AddCompsEffect
       components:
-        - type: Snoring
+      - type: Snoring

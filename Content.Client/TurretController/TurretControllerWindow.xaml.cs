@@ -1,4 +1,5 @@
 using Content.Client.Stylesheets.Fonts;
+using Content.Client.Stylesheets;
 using Content.Client.UserInterface.Controls;
 using Content.Shared.Access;
 using Content.Shared.Access.Systems;
@@ -21,6 +22,7 @@ public sealed partial class TurretControllerWindow : BaseWindow
 {
     [Dependency] private IEntityManager _entManager = default!;
     [Dependency] private IPlayerManager _playerManager = default!;
+    [Dependency] private IStylesheetManager _stylesheets = default!;
     [Dependency] private IResourceCache _cache = default!;
 
     private readonly AccessReaderSystem _accessReaderSystem;
@@ -68,10 +70,25 @@ public sealed partial class TurretControllerWindow : BaseWindow
         AccessConfiguration.SetMonotone(true);
         AccessConfiguration.SetLabelStyleClass("ConsoleText");
         AccessConfiguration.OnAccessLevelsChangedEvent += OnAccessLevelsChanged;
+    }
 
-        // Override footer font
-        var smallFont = new NotoFontFamilyStack(_cache).GetFont(8);
-        Footer.FontOverride = smallFont;
+    protected override void EnteredTree()
+    {
+        base.EnteredTree();
+
+        _stylesheets.StyleChanged += OnStyleChanged;
+    }
+
+    protected override void ExitedTree()
+    {
+        base.ExitedTree();
+
+        _stylesheets.StyleChanged -= OnStyleChanged;
+    }
+
+    private void OnStyleChanged(IStylesheetAccessor accessor)
+    {
+        Footer.FontOverride = accessor.FontNanotrasen.BaseFont.GetFont(8);
     }
 
     private void OnAccessLevelsChanged(HashSet<ProtoId<AccessLevelPrototype>> accessLevels, bool isPressed)

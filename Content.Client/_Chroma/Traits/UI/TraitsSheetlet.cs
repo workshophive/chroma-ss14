@@ -2,14 +2,17 @@ using Content.Client.Stylesheets;
 using Robust.Client.Graphics;
 using Robust.Client.UserInterface;
 using Robust.Client.UserInterface.Controls;
+using Content.Client.Stylesheets.StylesheetDefinitions;
 using static Content.Client.Stylesheets.StylesheetHelpers;
+using Content.Client.Stylesheets.SheetletConfigs;
 
 namespace Content.Client._Chroma.Traits.UI;
 
-[CommonSheetlet]
-public sealed class TraitsSheetlet<T> : Sheetlet<T> where T : PalettedStylesheet
+[Sheetlet(typeof(CommonStylesheetDefinition))]
+public sealed class TraitsSheetlet<T> : ISheetlet<T> 
+    where T : IPaletteConfig, IFontConfig
 {
-    public override StyleRule[] GetRules(T sheet, object config)
+    public StyleRule[] GetRules(StylesheetDefinition sheet, T config)
     {
         // Color palette
         // sorry but the default ColorPalette just sucks in terms of ligher/darker colors
@@ -106,17 +109,17 @@ public sealed class TraitsSheetlet<T> : Sheetlet<T> where T : PalettedStylesheet
 
             E<Label>()
                 .Class("TraitsTitleLabel")
-                .Font(sheet.BaseFont.GetFont(14))
+                .Font(config.BaseFont.GetFont(14))
                 .FontColor(textPrimary),
 
             E<Label>()
                 .Class("TraitsSubtitleLabel")
-                .Font(sheet.BaseFont.GetFont(11))
+                .Font(config.BaseFont.GetFont(11))
                 .FontColor(textSecondary),
 
             E<Label>()
                 .Class("TraitsStatLabel")
-                .Font(sheet.BaseFont.GetFont(12))
+                .Font(config.BaseFont.GetFont(12))
                 .FontColor(accentBlue),
 
             // ===== PROGRESS BAR =====
@@ -160,7 +163,7 @@ public sealed class TraitsSheetlet<T> : Sheetlet<T> where T : PalettedStylesheet
 
             E<Label>()
                 .Class("TraitsFooterText")
-                .Font(sheet.BaseFont.GetFont(10))
+                .Font(config.BaseFont.GetFont(10))
                 .FontColor(textMuted),
 
             // ===== CATEGORY HEADER =====
@@ -174,22 +177,22 @@ public sealed class TraitsSheetlet<T> : Sheetlet<T> where T : PalettedStylesheet
 
             E<Label>()
                 .Class("TraitsCategoryExpandIcon")
-                .Font(sheet.BaseFont.GetFont(10))
+                .Font(config.BaseFont.GetFont(10))
                 .FontColor(textSecondary),
 
             E<Label>()
                 .Class("TraitsCategoryNameLabel")
-                .Font(sheet.BaseFont.GetFont(12))
+                .Font(config.BaseFont.GetFont(12))
                 .FontColor(textPrimary),
 
             E<Label>()
                 .Class("TraitsCategoryStatsLabel")
-                .Font(sheet.BaseFont.GetFont(10))
+                .Font(config.BaseFont.GetFont(10))
                 .FontColor(textSecondary),
 
             E<Label>()
                 .Class("TraitsCategoryPointsLabel")
-                .Font(sheet.BaseFont.GetFont(10))
+                .Font(config.BaseFont.GetFont(10))
                 .FontColor(textMuted),
 
             // ===== CATEGORY ACCENT =====
@@ -219,16 +222,16 @@ public sealed class TraitsSheetlet<T> : Sheetlet<T> where T : PalettedStylesheet
 
             E<Label>()
                 .Class("TraitsEntryNameLabel")
-                .Font(sheet.BaseFont.GetFont(11))
+                .Font(config.BaseFont.GetFont(11))
                 .FontColor(textPrimary),
 
             E<Label>()
                 .Class("TraitsEntryCostLabel")
-                .Font(sheet.BaseFont.GetFont(11)),
+                .Font(config.BaseFont.GetFont(11)),
 
             E<RichTextLabel>()
                 .Class("TraitsEntryDescriptionLabel")
-                .Font(sheet.BaseFont.GetFont(10))
+                .Font(config.BaseFont.GetFont(10))
                 .FontColor(textSecondary),
         };
 

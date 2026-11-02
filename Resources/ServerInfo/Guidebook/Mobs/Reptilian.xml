@@ -1,5 +1,5 @@
 <Document>
-  # Reptilians
+  # Unathi
 
   <Box>
     <GuideEntityEmbed Entity="AppearanceReptilian" Caption=""/>
@@ -7,7 +7,7 @@
 
   ## General Information
 
-  Reptilians can [color=lightgreen]use their tail to drag objects around[/color], keeping both their hands free.
+  Unathi can [color=lightgreen]use their tail to drag objects around[/color], keeping both their hands free.
 
   Their sharp claws make their unarmed attacks deal Slash damage.
 

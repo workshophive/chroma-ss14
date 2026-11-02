@@ -1,5 +1,5 @@
 <Document>
-  # Slime People
+  # Laspii
 
   <Box>
     <GuideEntityEmbed Entity="MobSlimePerson" Caption=""/>
@@ -7,9 +7,9 @@
 
   ## General Information
 
-  Slimes breathe nitrogen instead of oxygen (though inhaling oxygen has no ill effect on them). They exhale nitrous oxide and are unaffected by inhaling it.
+  Laspii breathe nitrogen instead of oxygen (though inhaling oxygen has no ill effect on them). They exhale nitrous oxide and are unaffected by inhaling it.
 
-  They have an [color=lightgreen]internal 2x3 slot inventory[/color] inside of their slime membrane. This allows them to carry a bit more than other species,
+  They have an [color=lightgreen]internal 2x3 slot inventory[/color] inside of their membrane. This allows them to carry a bit more than other species,
   though [italic]anyone[/italic] is able to reach inside this inventory without asking.
 
   They have slime rather than blood, which is replenished when metabolizing iron or drinking slime.

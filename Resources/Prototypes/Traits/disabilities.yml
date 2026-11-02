@@ -27,7 +27,6 @@
     components:
     - type: PermanentBlindness
       blindness: 4
-      glassesFixable: true
   - !type:SpawnItemInHandEffect
     item: ClothingEyesGlasses
   whitelist:
@@ -122,7 +121,7 @@
   effects:
   - !type:AddStatusEffect
     statusEffects:
-    - HemophiliaStatusEffect
+    - TraitStatusEffectHemophilia
 
 - type: trait
   id: ImpairedMobility
@@ -146,4 +145,4 @@
   effects:
   - !type:AddStatusEffect
     statusEffects:
-    - BlinkDyspraxiaStatusEffect
+    - TraitStatusEffectBlinkDyspraxia

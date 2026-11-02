@@ -1,13 +1,16 @@
 using Content.Client.Stylesheets;
 using Robust.Client.UserInterface;
 using static Content.Client.Stylesheets.StylesheetHelpers;
+using Content.Client.Stylesheets.StylesheetDefinitions;
+using Robust.Shared.Utility;
 
 namespace Content.Client.Botany.UI;
 
-[CommonSheetlet]
-public sealed class BotanySheetlet : Sheetlet<PalettedStylesheet>
+[Sheetlet(typeof(CommonStylesheetDefinition))]
+public sealed class BotanySheetlet<T> : ISheetlet<T>
+    where T : ISheetletConfig
 {
-    public override StyleRule[] GetRules(PalettedStylesheet sheet, object config)
+    public StyleRule[] GetRules(StylesheetDefinition sheet, T config)
     {
         return
         [

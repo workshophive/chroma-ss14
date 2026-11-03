@@ -1,6 +1,8 @@
 using System.Linq;
 using Content.Server.GameTicking;
+using Content.Shared.GameTicking;
 using Content.Server.Station.Components;
+using Content.Shared.Station.Components;
 using Content.Shared._FarHorizons.StarSystem;
 using Content.Shared._FarHorizons.StarSystem.Helpers;
 using Robust.Server.GameObjects;
@@ -13,12 +15,12 @@ namespace Content.Server._FarHorizons.StarSystem;
 public sealed partial class StarSystemMapSystem : SharedStarSystemMapSystem
 {
 
-    [Dependency] private readonly GameTicker _ticker = default!;
-    [Dependency] private readonly IPrototypeManager _protoMan = default!;
-    [Dependency] private readonly IRobustRandom _rand = default!;
-    [Dependency] private readonly MapSystem _map = default!;
-    [Dependency] private readonly MetaDataSystem _metadata = default!;
-    [Dependency] private readonly TransformSystem _transform = default!;
+    [Dependency] private GameTicker _ticker = default!;
+    [Dependency] private IPrototypeManager _protoMan = default!;
+    [Dependency] private IRobustRandom _rand = default!;
+    [Dependency] private MapSystem _map = default!;
+    [Dependency] private MetaDataSystem _metadata = default!;
+    [Dependency] private TransformSystem _transform = default!;
 
     public override void Initialize()
     {

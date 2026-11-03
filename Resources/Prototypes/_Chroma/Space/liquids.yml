@@ -1,0 +1,41 @@
+- type: planetaryLiquidType
+  id: LiquidAmmonia
+  color: '#269479'
+  shallowColor: '#77b58e'
+  level:
+    min: 0.05
+    max: 0.75
+  riverFrequency:
+    min: 2.0
+    max: 5.0
+  riverThreshold:
+    min: 0.1
+    max: 0.4
+  specularity:
+    min: 16.0
+    max: 32.0
+  emissive: false
+  emission:
+    min: 0.0
+    max: 0.0
+    
+- type: planetaryLiquidType
+  id: LiquidMethane
+  color: '#5f9199'
+  shallowColor: '#ceede3'
+  level:
+    min: 0.1
+    max: 0.5
+  riverFrequency:
+    min: 1.0
+    max: 3.0
+  riverThreshold:
+    min: 0.15
+    max: 0.4
+  specularity:
+    min: 0.0
+    max: 12.0
+  emissive: true
+  emission:
+    min: 0.15
+    max: 0.5

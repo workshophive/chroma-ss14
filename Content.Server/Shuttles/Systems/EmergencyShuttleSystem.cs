@@ -39,6 +39,7 @@ using Robust.Shared.Prototypes;
 using Robust.Shared.Random;
 using Robust.Shared.Timing;
 using Robust.Shared.Utility;
+using Content.Shared._FarHorizons.StarSystem; //FH
 
 namespace Content.Server.Shuttles.Systems;
 
@@ -560,6 +561,15 @@ public sealed partial class EmergencyShuttleSystem : SharedEmergencyShuttleSyste
         component.Entity = grid;
         _shuttle.TryAddFTLDestination(mapId, true, out _);
         Log.Info($"Created centcomm grid {ToPrettyString(grid)} on map {ToPrettyString(map)} for station {ToPrettyString(station)}");
+
+        // Far Horizons start
+        // If CC grid has its own custom star system attached - let it know about map
+        if (!TryComp<BecomesCustomStarSystemComponent>(grid, out var customStarSystem))
+            return;
+
+        customStarSystem.Map = map;
+        Dirty<BecomesCustomStarSystemComponent>((grid.Value.Owner, customStarSystem));
+        // Far Horizons end
     }
 
     public HashSet<EntityUid> GetCentcommMaps()

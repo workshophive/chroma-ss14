@@ -81,3 +81,19 @@
     boulderDensity: 0.05
     boulderMaxRadius: 1.5
     boulderSpeedMultiplier: 1.25
+    
+- type: shader
+  id: NeutronStar
+  kind: source
+  path: "/Textures/_FarHorizons/Shaders/StarSystem/neutron_star.swsl"
+  params:
+    parallaxFactor: 0.05
+    solarRadiusFactor: 25.0
+
+- type: shader
+  id: BlackHole
+  kind: source
+  path: "/Textures/_FarHorizons/Shaders/StarSystem/black_hole.swsl"
+  params:
+    parallaxFactor: 0.05
+    solarRadiusFactor: 25.0

@@ -142,3 +142,31 @@
     - type: OuterCold
       prob: 0.7
   asteroidBelts: [ StandardAsteroidBelt ]
+  
+# Neutron Star
+- type: starType
+  id: Neutron
+  shader: NeutronStar
+  solarMass:
+    min: 0.08
+    max: 0.45
+  color: '#2B62FF'
+  orbits:
+    - type: InnerHot
+    - type: InnerHot
+      prob: 0.75
+    - type: InnerHabitable
+    - type: InnerHabitable
+    - type: InnerCold
+      prob: 0.9
+    - type: Belt
+      prob: 0.9
+    - type: OuterWarm
+    - type: OuterWarm
+      prob: 0.7
+    - type: OuterCold
+    - type: OuterCold
+      prob: 0.5
+  asteroidBelts: [ StandardAsteroidBelt ]
+  
+# At some point I'll figure out how to add black holes to this; for now exclusive to CC

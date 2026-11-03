@@ -90,6 +90,8 @@ entities:
     components:
     - type: MetaData
       name: Central Command
+    - type: BecomesCustomStarSystem
+      customSystem: BlackHoleCC
     - type: Transform
       parent: invalid
     - type: MapGrid

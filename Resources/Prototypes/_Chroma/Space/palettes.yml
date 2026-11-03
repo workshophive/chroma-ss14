@@ -1,0 +1,14 @@
+# Volcanic
+- type: planetPalette
+  id: PaletteVolcanicVenus
+  color1: '#6b6653'
+  color2: '#a3945e'
+  color3: '#ebdaa2'
+  color4: '#faf3dc'
+  
+- type: planetPalette
+  id: PaletteVolcanicIjen
+  color1: '#19182e'
+  color2: '#22285c'
+  color3: '#5d8ac9'
+  color4: '#54bef5'

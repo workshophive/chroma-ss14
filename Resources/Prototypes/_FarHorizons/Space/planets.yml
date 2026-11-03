@@ -83,6 +83,8 @@
   palettes:
     - PaletteVolcanicMagma
     - PaletteVolcanicSulfur
+    - PaletteVolcanicVenus
+    - PaletteVolcanicIjen
   rings:
     - StandardRings
   customData: &rocky_planet_values
@@ -171,6 +173,8 @@
   liquidProbability: 0.25
   liquids:
     - LiquidPlasma
+    - LiquidAmmonia
+    - LiquidMethane
   palettes:
     - PaletteIceDeep
     - PaletteIceMethane
@@ -194,6 +198,7 @@
   liquidProbability: 1.0
   liquids:
     - LiquidWater
+    - LiquidAmmonia
   palettes:
     - PaletteHabitableEarth
     - PaletteHabitableOcean

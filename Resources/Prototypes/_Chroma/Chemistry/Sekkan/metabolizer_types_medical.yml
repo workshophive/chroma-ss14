@@ -1,0 +1,22 @@
+- type: metabolizerType
+  id: CopperRestoresBlood
+  name: metabolizer-type-copper-blood
+
+- type: metabolizerType
+  id: IronRestoresBlood
+  name: metabolizer-type-iron-blood
+  
+# For Vulpkanin
+- type: metabolizerType
+  id: SulfurRestoresBlood
+  name: metabolizer-type-sulfur-blood
+  
+# For Mynki
+- type: metabolizerType
+  id: SilverRestoresBlood
+  name: metabolizer-type-silver-blood
+  
+# For Vox, Avali
+- type: metabolizerType
+  id: AmmoniaRestoresBlood
+  name: metabolizer-type-ammonia-blood

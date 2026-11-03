@@ -1,0 +1,53 @@
+# Hybrids, ambiguously genetically modified, etc
+- type: species
+  id: BaseSekkan
+  name: species-name-sekkan
+  roundStart: true
+  prototype: MobSekkan
+  dollPrototype: AppearanceSekkan
+  skinColoration: Hues
+  defaultSkinTone: "#ffda93"
+  hasSubspecies: true
+  subspeciesName: species-name-sekkan
+
+# Siypno Seki, radio folk
+- type: species
+  id: SekkanRadio
+  name: subspecies-name-sekkan-radio
+  roundStart: true
+  prototype: MobSekkanRadio
+  dollPrototype: AppearanceSekkanRadio
+  skinColoration: Hues
+  defaultSkinTone: "#94d1ff"
+  subspeciesOf: BaseSekkan
+  subspeciesName: subspecies-name-sekkan-radio
+  
+# Sruisz Seki, serpent folk
+- type: species
+  id: SekkanSerpent
+  name: subspecies-name-sekkan-serpent
+  roundStart: true
+  prototype: MobSekkanSerpent
+  dollPrototype: AppearanceSekkanSerpent
+  skinColoration: Hues
+  defaultSkinTone: "#cbff94"
+  subspeciesOf: BaseSekkan
+  subspeciesName: subspecies-name-sekkan-serpent
+  
+# Lynay Seki, banded folk
+- type: species
+  id: SekkanBanded
+  name: subspecies-name-sekkan-banded
+  roundStart: true
+  prototype: MobSekkanBanded
+  dollPrototype: AppearanceSekkanBanded
+  skinColoration: Hues
+  defaultSkinTone: "#ff94fd"
+  subspeciesOf: BaseSekkan
+  subspeciesName: subspecies-name-sekkan-banded
+  
+# Munat Seki, whispering folk
+
+# Physamda Seki, amber folk
+
+# Bylal Seki, resin folk

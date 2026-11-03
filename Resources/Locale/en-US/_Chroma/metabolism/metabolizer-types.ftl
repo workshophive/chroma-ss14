@@ -20,3 +20,7 @@ metabolizer-type-iron-blood = Restoring blood with iron
 metabolizer-type-sulfur-blood = Restoring blood with sulfur
 metabolizer-type-silver-blood = Restoring blood with silver
 metabolizer-type-ammonia-blood = Restoring blood with ammonia
+
+metabolizer-type-sekkan-radio = Siypno Seki
+metabolizer-type-sekkan-serpent = Sruisz Seki
+metabolizer-type-sekkan-banded = Lynā Seki

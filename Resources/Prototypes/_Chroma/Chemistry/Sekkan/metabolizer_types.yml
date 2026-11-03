@@ -1,0 +1,11 @@
+- type: metabolizerType
+  id: SekkanRadio
+  name: metabolizer-type-sekkan-radio
+  
+- type: metabolizerType
+  id: SekkanSerpent
+  name: metabolizer-type-sekkan-serpent
+  
+- type: metabolizerType
+  id: SekkanBanded
+  name: metabolizer-type-sekkan-banded

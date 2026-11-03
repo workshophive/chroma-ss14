@@ -1,0 +1,226 @@
+- type: markingsGroup
+  parent: Undergarments
+  id: Sekkan
+  limits:
+    enum.HumanoidVisualLayers.Hair:
+      limit: 1
+      required: false
+    enum.HumanoidVisualLayers.FacialHair:
+      limit: 1
+      onlyGroupWhitelisted: true
+      required: false
+    enum.HumanoidVisualLayers.Head:
+      limit: 3
+      required: false
+    enum.HumanoidVisualLayers.HeadTop:
+      limit: 1
+      required: false
+    enum.HumanoidVisualLayers.Snout:
+      limit: 1
+      required: false
+    enum.HumanoidVisualLayers.SnoutCover:
+      limit: 3
+      required: false
+    enum.HumanoidVisualLayers.Tail:
+      limit: 1
+      required: false
+    enum.HumanoidVisualLayers.LArm:
+      limit: 2
+      required: false
+    enum.HumanoidVisualLayers.RArm:
+      limit: 2
+      required: false
+    enum.HumanoidVisualLayers.LHand:
+      limit: 2
+      required: false
+    enum.HumanoidVisualLayers.RHand:
+      limit: 2
+      required: false
+    enum.HumanoidVisualLayers.LLeg:
+      limit: 2
+      required: false
+    enum.HumanoidVisualLayers.RLeg:
+      limit: 2
+      required: false
+    enum.HumanoidVisualLayers.LFoot:
+      limit: 2
+      required: false
+    enum.HumanoidVisualLayers.RFoot:
+      limit: 2
+      required: false
+    enum.HumanoidVisualLayers.UndergarmentTop:
+      limit: 1
+      required: false
+    enum.HumanoidVisualLayers.UndergarmentBottom:
+      limit: 1
+      required: false
+      
+- type: entity
+  parent: BaseSpeciesAppearance
+  id: AppearanceSekkan
+  categories: [HideSpawnMenu]
+  name: seki-sawan appearance
+  components:
+  - type: InitialBody
+    organs:
+      Torso: OrganSekkanTorso
+      Head: OrganSekkanHead
+      ArmLeft: OrganSekkanArmLeft
+      ArmRight: OrganSekkanArmRight
+      HandRight: OrganSekkanHandRight
+      HandLeft: OrganSekkanHandLeft
+      LegLeft: OrganSekkanLegLeft
+      LegRight: OrganSekkanLegRight
+      FootLeft: OrganSekkanFootLeft
+      FootRight: OrganSekkanFootRight
+      Brain: OrganSekkanBrain
+      Eyes: OrganSekkanEyes
+      Tongue: OrganSekkanTongue
+      Appendix: OrganSekkanAppendix
+      Ears: OrganSekkanEars
+      Lungs: OrganSekkanLungs
+      Heart: OrganSekkanHeart
+      Stomach: OrganSekkanStomach
+      Liver: OrganSekkanLiver
+      Kidneys: OrganSekkanKidneys
+  - type: HumanoidProfile
+    species: Sekkan
+    
+- type: entity
+  parent:
+  - BaseMobSpeciesOrganic
+  - AppearanceSekkan
+  id: MobSekkan
+  name: Urist McSeki
+  components:
+  - type: JumpAbility
+    action: ActionVulpkaninGravityJump
+    canCollide: true
+    jumpDistance: 1.5
+    jumpSound:
+      path: /Audio/Weapons/punchmiss.ogg
+      params:
+        pitch: 1.33
+        volume: -5
+        variation: 0.05
+
+- type: entity
+  id: OrganSekkanMetabolizer
+  abstract: true
+  components:
+  - type: Metabolizer
+    metabolizerTypes: [EthanolIntolerant, OxygenBreathing, WehImmune]
+
+- type: entity
+  id: OrganSekkanVisual
+  abstract: true
+  components:
+  - type: VisualOrgan
+    data:
+      sprite: _Chroma/Mobs/Species/Sekkan/parts.rsi
+  - type: VisualOrganMarkings
+    markingData:
+      group: Sekkan
+
+- type: entity
+  parent: [ OrganSekkan, OrganSekkanVisual ]
+  id: OrganSekkanExternal
+  abstract: true
+  components:
+  - type: Sprite
+    sprite: _Chroma/Mobs/Species/Sekkan/parts.rsi
+
+- type: entity
+  parent: [ OrganBaseTorsoSexed, OrganBaseTorso, OrganSekkanExternal ]
+  id: OrganSekkanTorso
+
+- type: entity
+  parent: [ OrganBaseHead, OrganSekkanExternal ]
+  id: OrganSekkanHead
+  components:
+  - type: VisualOrganMarkings
+    hideableLayers:
+    - enum.HumanoidVisualLayers.Snout
+    - enum.HumanoidVisualLayers.HeadTop
+    - enum.HumanoidVisualLayers.HeadSide
+    - enum.HumanoidVisualLayers.Hair
+    - enum.HumanoidVisualLayers.FacialHair
+    dependentHidingLayers:
+      enum.HumanoidVisualLayers.Snout:
+      - enum.HumanoidVisualLayers.SnoutCover
+
+- type: entity
+  parent: [ OrganBaseArmLeft, OrganSekkanExternal ]
+  id: OrganSekkanArmLeft
+
+- type: entity
+  parent: [ OrganBaseArmRight, OrganSekkanExternal ]
+  id: OrganSekkanArmRight
+
+- type: entity
+  parent: [ OrganBaseHandLeft, OrganSekkanExternal ]
+  id: OrganSekkanHandLeft
+
+- type: entity
+  parent: [ OrganBaseHandRight, OrganSekkanExternal ]
+  id: OrganSekkanHandRight
+
+- type: entity
+  parent: [ OrganBaseLegLeft, OrganSekkanExternal ]
+  id: OrganSekkanLegLeft
+
+- type: entity
+  parent: [ OrganBaseLegRight, OrganSekkanExternal ]
+  id: OrganSekkanLegRight
+
+- type: entity
+  parent: [ OrganBaseFootLeft, OrganSekkanExternal ]
+  id: OrganSekkanFootLeft
+
+- type: entity
+  parent: [ OrganBaseFootRight, OrganSekkanExternal ]
+  id: OrganSekkanFootRight
+
+- type: entity
+  parent: [ OrganBaseBrain, OrganSpriteHumanInternal, OrganSekkanInternal ]
+  id: OrganSekkanBrain
+
+- type: entity
+  parent: [ OrganSekkanVisual, OrganBaseEyes, OrganSekkanInternal ]
+  id: OrganSekkanEyes
+  components:
+  - type: EyeBlinking
+    eyelidsSprite: /Textures/_Chroma/Mobs/Species/Sekkan/parts.rsi
+  - type: Appearance
+
+- type: entity
+  parent: [ OrganBaseTongue, OrganSekkanInternal ]
+  id: OrganSekkanTongue
+
+- type: entity
+  parent: [ OrganBaseAppendix, OrganSekkanInternal ]
+  id: OrganSekkanAppendix
+
+- type: entity
+  parent: [ OrganBaseEars, OrganSekkanInternal ]
+  id: OrganSekkanEars
+
+- type: entity
+  parent: [ OrganBaseLungs, OrganSekkanInternal, OrganSekkanMetabolizer ]
+  id: OrganSekkanLungs
+
+- type: entity
+  parent: [ OrganBaseHeart, OrganSekkanInternal, OrganSekkanMetabolizer ]
+  id: OrganSekkanHeart
+
+- type: entity
+  parent: [ OrganBaseStomach, OrganSekkanInternal, OrganSekkanMetabolizer ]
+  id: OrganSekkanStomach
+
+- type: entity
+  parent: [ OrganBaseLiver, OrganSekkanInternal, OrganSekkanMetabolizer ]
+  id: OrganSekkanLiver
+
+- type: entity
+  parent: [ OrganBaseKidneys, OrganSekkanInternal, OrganSekkanMetabolizer ]
+  id: OrganSekkanKidneys

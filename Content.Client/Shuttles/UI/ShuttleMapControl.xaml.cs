@@ -70,7 +70,7 @@ public sealed partial class ShuttleMapControl : BaseShuttleControl
     private readonly Dictionary<Color, List<(Vector2, string)>> _strings = new();
     private readonly List<ShuttleExclusionObject> _viewportExclusions = new();
 
-    public ShuttleMapControl() : base(256f, 1024f, 512f) // Okay so for the record this is a change from Far Horizons, NOT Chroma. I have no clue why. It just is. Save me.
+    public ShuttleMapControl() : base(256f, 4096f, 512f) // I understand now
     {
         RobustXamlLoader.Load(this);
         _mapSystem = EntManager.System<SharedMapSystem>();
